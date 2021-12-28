@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>08-数组的增删改查</title>
+  <script type="text/javascript">
+	// 1.1定义数组
+	let array = ["23", "kobe", "curry", "abc"];
+	// 1.2 将索引为1的数据修改为guardwhy
+	array[1] = "guardwhy";
+	console.log("array数组(修改):" + "[" + array + "]");
+	console.log("++++++++++++++++++++");
+
+	// 2.1 替换数组元素
+	array.splice(1, 2, "33", "James");
+    console.log("array数组(替换):" + "[" + array + "]");
+    console.log("++++++++++++++++++++");
+
+    // 3.在数组最后添加一条数据
+	let number = array.push("str");
+	console.log("number长度:" + "[" + number + "]");
+    console.log("array数组(添加):" + "[" + array + "]");
+    console.log("++++++++++++++++++++");
+
+    // 4.在数组最前面添加两条数据
+	// unshift方法和push方法一样, 会将新增内容之后当前数组的长度返回.
+	let length1 = array.unshift("guardwhy","13");
+	console.log("length1长度:"+ "[" + length1 + "]");
+    console.log("array数组(添加):" + "[" + array + "]");
+    console.log("++++++++++++++++++++");
+
+    // 5.删除数组最后一条数据。
+	let length2 = array.pop();
+    console.log("length2长度:"+ "[" + length2 + "]");
+    console.log("array数组(添加):" + "[" + array + "]");
+    console.log("++++++++++++++++++++");
+
+    // 6.删除数组最前面一条数据
+    let length3 = array.shift();
+    console.log("length3长度:"+ "[" + length3 + "]");
+    console.log("array数组(添加):" + "[" + array + "]");
+    console.log("++++++++++++++++++++");
+
+    // 7.遍历的同时删除数组中所有元素
+	for(let i=0; i<array.length; i++){
+	  console.log(array.length);
+      // 注意点: 通过delete来删除数组中的元素, 数组的length属性不会发生变化
+	  delete array[i];
+	}
+	// 输出数组
+	console.log(array);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

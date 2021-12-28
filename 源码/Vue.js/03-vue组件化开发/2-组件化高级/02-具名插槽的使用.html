@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>具名插槽的使用</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+     <cpn><span slot="center">标题</span></cpn>
+      <cpn><button slot="left">返回</button></cpn>
+    </div>
+
+    <!--子组件模板-->
+    <template id="cpn">
+      <div>
+        <slot name="left"><span>左边</span></slot>
+        <slot name="center"><span>中间</span></slot>
+        <slot name="right"><span>右边</span></slot>
+      </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          message: 'hello world!'
+        },
+        components: {
+          cpn: {
+            template: '#cpn'
+          }
+        }
+      })
+  </script>
+</body>
+</html>

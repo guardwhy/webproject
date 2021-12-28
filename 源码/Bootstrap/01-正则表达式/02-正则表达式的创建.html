@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>正则表达式的创建</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 1.创建方式：/开头和结尾,不是字符串,\不用转义
+  let reg = /^cat$/i;
+  // 2.使用test方法判断是否匹配
+  let num = reg.test("cat");
+  document.write(num + "<br/>");
+</script>
+</body>
+</html>

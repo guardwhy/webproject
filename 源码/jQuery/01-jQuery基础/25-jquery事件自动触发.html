@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jquery事件自动触发</title>
+  <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      .div1{
+          width: 200px;
+          height: 200px;
+          background: green;
+      }
+      .div2{
+          width: 100px;
+          height: 100px;
+          background: rebeccapurple;
+      }
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<div class="div1">
+  <div class="div2"></div>
+</div>
+<a href="https://www.icourse163.org/"><span>注册中国大学MOOC</span></a>
+<script type="text/javascript">
+  $(function (){
+    /*
+	trigger: 如果利用trigger自动触发事件,会触发事件冒泡.
+	triggerHandler: 如果利用triggerHandler自动触发事件, 不会触发事件冒泡.
+	*/
+    $(".div2").click(function (event){
+      alert("div2子类元素");
+	});
+    $(".div1").click(function (){
+      alert("div1父类元素");
+	});
+
+    // $(".div2").trigger("click");
+	// $(".div2").triggerHandler("click");
+
+	// 2.超链接自动触发事件
+	$("span").click(function (){
+	  alert("超链接...")
+	});
+	// 2.1 自动触发
+	$("span").trigger("click");
+  });
+</script>
+</body>
+</html>

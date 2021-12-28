@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>07-ES6循环索引同步</title>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<script type="text/javascript">
+  /*
+    在ES6中如果在循环中通过let定义的变量, 那么这个变量是一个局部变量。
+  */
+  for(let i=0; i<3; i++){
+    /*
+    * 在ES6中由于{}是块级作用域, 所以只要在块级作用域中定义了一个函数.
+    * 并且这个函数中用到了块级作用域中的数据, 那么这个函数就是闭包
+    */
+    function test(){
+      console.log(i);
+	}
+  }
+  test();
+</script>
+</body>
+</html>

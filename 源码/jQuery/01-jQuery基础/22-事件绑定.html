@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件绑定</title>
+  <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<button>按钮</button>
+<script type="text/javascript">
+  $(function (){
+	/*
+	可以添加多个相同或者不同类型的事件,不会覆盖
+	*/
+	$("button").click(function (){
+	  alert("hello jQuery!!!");
+	});
+
+	$("button").click(function (){
+	  alert("guardwhy");
+	});
+
+	$("button").mouseleave(function (){
+	  alert("移出鼠标");
+	});
+	// 移入鼠标
+	$("button").mouseenter(function (){
+	  alert("鼠标移入！！！");
+	});
+  });
+</script>
+</body>
+</html>

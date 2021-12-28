@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>闭包</title>
+</head>
+<body>
+<script type="text/javascript">
+  function func1(){
+    //c 是局部变量 外面拿不到
+    var c = 10;
+
+    function func2(){
+      var f = 20;
+      console.log("c1的值" + c);
+      function func3(){
+        console.log("c2的值:" + c);
+      }
+    }
+    func2();
+    console.log("f的值:" + f);
+  }
+  func1();
+</script>
+</body>
+</html>

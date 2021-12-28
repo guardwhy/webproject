@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>排它思想</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul{
+		width: 400px;
+        border: 1px solid #000;
+		margin: 100px auto;
+        list-style-type: none;
+	}
+	.current{
+		background: red;
+	}
+  </style>
+</head>
+<body>
+<ul>
+  <li class="current">java</li>
+  <li>python</li>
+  <li>html</li>
+  <li>javaScript</li>
+  <li>C++</li>
+</ul>
+<script type="text/javascript">
+  /*
+  	1.ES6操作
+  */
+
+  // 选中所有的li
+  let oItems = document.querySelectorAll("li");
+  // 定义计数器
+  let previousIndex = 0;
+  // 遍历操作
+  /*for(let i=0; i<oItems.length; i++){
+    let item = oItems[i];
+    item.onclick = function (){
+      let preItem = oItems[previousIndex];
+      preItem.className = "";
+
+      this.className = "current";
+      previousIndex = i;
+	}
+  }
+ */
+
+ // 2.ES5操作
+ for (var i=0; i<oItems.length; i++){
+   var item = oItems[i];
+   (function (index){
+     item.onclick = function (){
+       var preItem = oItems[previousIndex];
+       preItem.className = "";
+
+       this.className = "current";
+       previousIndex = index;
+	 }
+   })(i);
+ }
+</script>
+</body>
+</html>

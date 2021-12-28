@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>伪元素选择器</title>
+  <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      div{
+          width: 200px;
+		  height: 200px;
+		  background-color: darkorange;
+      }
+	  div::before{
+		  content: "hello world";
+		  width: 50px;
+		  height: 50px;
+		  background-color: greenyellow;
+		  display: block;
+	  }
+
+	  div::after{
+          /*指定添加的子元素中存储的内容*/
+          content: "java网站搭建";
+          /*指定添加的子元素的宽度和高度*/
+          width: 50px;
+          /*height: 50px;*/
+          /*内容是可以超出标签的范围的, 所以高度为0依然可以看见内容*/
+          height:0;
+          background-color: crimson;
+          /*指定添加的子元素的显示模式*/
+          display: block;
+          /*隐藏添加的子元素*/
+          visibility: hidden;
+	  }
+
+  </style>
+</head>
+<body>
+	<div>
+	  javaSE是学习java的基础
+	</div>
+</body>
+</html>

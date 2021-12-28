@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获取网页高度</title>
+</head>
+<body>
+<script type="text/javascript">
+  let {width, height} = getScreen();
+  // 输出宽度和高度
+  console.log(width);
+  console.log(height);
+
+  // 调用函数
+  function getScreen(){
+    // 定义变量
+	let width, height;
+	// 条件判断
+	if(window.innerWidth){
+	  width = window.innerWidth;
+	  height = window.innerHeight;
+	}else if (document.compatMode === "BackCompat"){
+	  width = document.body.clientWidth;
+	  height = document.body.clientHeight;
+	}else{
+	  width = document.documentElement.clientWidth;
+	  height = document.documentElement.clientHeight;
+	}
+	return{
+	  width:width,
+	  height: height
+	}
+  }
+</script>
+</body>
+</html>

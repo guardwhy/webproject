@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-mode结合复选框</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <input type="checkbox" value="篮球" v-model="hobbies">篮球
+      <input type="checkbox" value="足球" v-model="hobbies">足球
+      <input type="checkbox" value="乒乓球" v-model="hobbies">乒乓球
+      <input type="checkbox" value="羽毛球" v-model="hobbies">羽毛球
+      <h2>您的爱好是: {{hobbies}}</h2>
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+        // 定义数据
+        data: {
+          message: 'hello world!',
+          isAgree: false,
+          hobbies:[]
+        }
+      })
+  </script>
+</body>
+</html>

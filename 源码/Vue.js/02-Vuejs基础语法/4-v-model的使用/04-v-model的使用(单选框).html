@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-mode结合单选框</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+     <label for="agree">
+       <input type="checkbox" id="agree" v-model="isAgree">同意协议
+     </label>
+      <h2>你的选择是:{{isAgree}}</h2>
+
+      <!--取反操作-->
+      <button :disabled="!isAgree">下一页</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          message: 'hello world!',
+          isAgree: false
+        }
+      })
+  	</script>
+</body>
+</html>

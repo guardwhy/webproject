@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>初识jQuery</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	div{
+		width: 100px;
+		height: 100px;
+        border: 1px solid #000;
+	}
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<div></div>
+<div class="box1"></div>
+<div id="box2"></div>
+<script type="text/javascript">
+  // 原生js
+  window.onload = function (event){
+    console.log("---原生JS--");
+    // 1.利用原生JS的查找DOM元素
+	let div1 = document.getElementsByTagName("div")[0];
+	let div2 = document.getElementsByClassName("box1")[0];
+	let div3 = document.getElementById("box2");
+	// 输出结果
+	console.log(div1);
+	console.log(div2);
+	console.log(div3);
+	// 2.利用原生的js修改背景颜色
+	/*div1.style.backgroundColor = "red";
+	div2.style.backgroundColor = "blue";
+	div3.style.backgroundColor = "yellow";*/
+  }
+
+  // jq方式
+  $(function (){
+    console.log("---jQuery方式---");
+    let $div1 = $("div");
+    let $div2 = $(".box1");
+    let $div3 = $("#box2");
+    // 输出结果
+	/*console.log($div1);
+	console.log($div2);
+	console.log($div3);*/
+
+	$div1.css({
+	  background:"red",
+	  width:"100px",
+	  height:"50px"
+	});
+	$div2.css({
+	  background: "blue"
+	});
+	$div3.css({
+	  background: "yellow"
+	});
+  });
+</script>
+</body>
+</html>

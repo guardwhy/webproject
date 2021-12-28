@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js继承</title>
+  <script type="text/javascript">
+    function Person(myName, myAge) {
+      // let per = new Object();
+      // let this = per;
+      // this = stu;
+      this.name = myName; // stu.name = myName;
+      this.age = myAge; // stu.age = myAge;
+      // return this;
+    }
+
+    Person.prototype.message = function () {
+      console.log("姓名:" + this.name, "年龄:" + this.age);
+    }
+
+    function Student(myName, myAge, myScore) {
+      // 在子类的构造函数中通过call借助父类的构造函数。
+      Person.call(this, myName, myAge);
+      this.score = myScore;
+      this.study = function () {
+        console.log("hello javaScript");
+      }
+    }
+
+    Student.prototype = new Person();
+    // 将子类的原型对象修改为父类的实例对象。
+    Student.prototype.constructor = Student;
+
+    // 实例化对象
+    let stu = new Student("guardwhy", 19, 99);
+    stu.message();
+    console.log( "分数:" + stu.score);
+    // 调用方法
+    stu.study();
+  </script>
+</head>
+<body>
+</body>
+</html>

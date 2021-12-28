@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>编译的作用域</title>
+</head>
+<body>
+
+<div id="app">
+  <!--使用变量时，先看在哪个模板里面-->
+  <cpn v-show="isShow"></cpn>
+  <!-- <cpn v-for="item in names"></cpn> -->
+</div>
+
+<template id="cpn">
+  <div>
+	<h2>我是子组件</h2>
+	<p>我是内容, 哈哈哈</p>
+	<!-- <button v-show="isShow">按钮</button> -->
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  /*实例*/
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊',
+      isShow: true
+    },
+	/*组件*/
+    components: {
+      cpn: {
+        template: '#cpn',
+        data() {
+          return {
+            isShow: false
+          }
+        }
+      },
+    }
+  })
+</script>
+
+</body>
+</html>

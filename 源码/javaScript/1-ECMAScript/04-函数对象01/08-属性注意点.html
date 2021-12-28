@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>属性注意点</title>
+  <script type="text/javascript">
+	// 1.构造函数Person
+	function Person(myName, myAge){
+	  this.name = myName;
+	  this.age = myAge;
+	}
+
+	Person.prototype = {
+	  constructor: Person,
+	  currentType: "javaScript hello!!!",
+	  say: function (){
+	    console.log("属性注意点~~~");
+	  }
+	}
+	// 2.创建对象
+	let obj = new Person("guardwhy", 26);
+	obj.currentType = "javaScript处理跳转..";
+	console.log(obj.currentType);	// javaScript处理跳转..
+	console.log(obj.__proto__.currentType);	// javaScript hello!!!
+  </script>
+</head>
+<body>
+
+</body>
+</html>

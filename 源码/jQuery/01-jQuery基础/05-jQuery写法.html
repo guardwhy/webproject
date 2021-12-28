@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery入口函数写法</title>
+  <script src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  // 方法一
+  $(document).ready(function (){
+    console.log("方式一")
+  });
+  // 方式二
+  jQuery(document).ready(function (){
+    console.log("方式二");
+  });
+
+  // 方式三
+  $(function (){
+    console.log("方式三");
+  });
+
+  // 方式四
+  jQuery(function (){
+    console.log("方式四");
+  })
+</script>
+</body>
+</html>

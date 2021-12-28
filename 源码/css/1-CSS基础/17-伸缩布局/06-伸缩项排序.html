@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>伸缩项排序</title>
+  <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      ul{
+          list-style: none;
+          width: 600px;
+          height: 600px;
+          border: 1px solid #000;
+          display: flex;
+      }
+      ul>li{
+          width: 100px;
+          height: 100px;
+          line-height: 100px;
+          text-align: center;
+          font-size: 30px;
+          background: red;
+      }
+      ul>li:nth-child(1){
+          order: 66;
+      }
+      ul>li:nth-child(2){
+          background: cyan;
+		  order: 0;
+      }
+      ul>li:nth-child(3){
+          background: rebeccapurple;
+		  order: -2;
+      }
+  </style>
+</head>
+<body>
+  <ul>
+	<li>java</li>
+	<li>python</li>
+	<li>html</li>
+  </ul>
+</body>
+</html>

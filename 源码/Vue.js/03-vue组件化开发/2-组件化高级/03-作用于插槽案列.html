@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>作用于插槽案列</title>
+</head>
+<body>
+    <!--作用域插槽: 父组件替换插槽的标签，但是内容由子组件来提供-->
+    <div id="app">
+      <cpn></cpn>
+      <!--&lt;!&ndash;目的是获取子组件中的starts&ndash;&gt;
+      <cpn>
+        &lt;!&ndash;方式1&ndash;&gt;
+        <template slot-scope="slot">
+          <span v-for="item in slot.data">-{{item}}</span>
+        </template>
+      </cpn>-->
+
+      <!--目的是获取子组件中的starts-->
+      <cpn>
+        <!--方式2-->
+        <template slot-scope="slot"><!--引用插槽对象-->
+          <span>{{slot.data.join(' - ')}}</span>
+        </template>
+      </cpn>
+    </div>
+
+    <!--子组件模板-->
+    <template id="cpn">
+      <div>
+		<!--子组件传递给父组件-->
+        <slot :data="starts">
+          <ul>
+            <li v-for="item in starts">{{item}}</li>
+          </ul>
+        </slot>
+      </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          message: 'hello world!'
+        },
+        components: {
+          cpn: {
+            template: '#cpn',
+            data(){
+              return {
+                starts: ['kobe', 'Jmaes', 'Curry', 'Duncan']
+              }
+            }
+          }
+        }
+      })
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件对象</title>
+</head>
+<body>
+<a href="https://www.imooc.com/">慕课网</a>
+<script type="text/javascript">
+  /*
+  事件对象的注意点:
+    在高级版本的浏览器中, 会自动将事件对象传递给回到函数
+    在低级版本的浏览器中, 不会自动将事件对象传递给回调函数
+    在低级版本的浏览器中, 需要通过window.event来获取事件对象
+  */
+let oA = document.querySelector("a");
+  oA.onclick = function (event){
+	// 兼容性实现
+	event = event || window.event;
+	// 打印
+	console.log(123);
+	// 阻止默认行为
+	return false;
+  }
+</script>
+</body>
+</html>

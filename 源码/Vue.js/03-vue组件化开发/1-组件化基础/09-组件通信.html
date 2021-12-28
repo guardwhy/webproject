@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组件通信-父传子(props中的驼峰标识)</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+	  <!--这里不支持驼峰标识-->
+      <cpn1 :c-info="info" :child-my-message="message"></cpn1>
+    </div>
+
+    <!--定义模板-->
+    <template id="cpn">
+	  <!--定义子组件模板的时候，要用外层的div将其包裹起来-->
+      <div>
+        <h2>{{cInfo}}</h2>
+        <h2>{{childMyMessage}}</h2>
+      </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+      const cpn1 = {
+        template: '#cpn',
+        props: {
+          cInfo: {
+            type: Object,
+            default() {
+              return {}
+            }
+          },
+          childMyMessage: {
+            type: String,
+            default: ''
+          }
+        }
+      }
+
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          info: {
+            name: 'guardWhy',
+            age: 26,
+            height: 1.71
+          },
+          message: 'curry'
+        },
+        // 注册组件
+        components:{
+          cpn1
+        }
+      })
+  </script>
+</body>
+</html>

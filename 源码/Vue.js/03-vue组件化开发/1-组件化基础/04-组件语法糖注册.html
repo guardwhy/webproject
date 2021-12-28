@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组件语法糖注册</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <cpn1></cpn1>
+      <cpn2></cpn2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+
+      // 注册全局主键语法糖
+      // 1.创建组件构造器
+      // const cpn1 = Vue.extend()
+
+      // 2.注册组件(全局组件注册语法糖)
+      Vue.component('cpn1', {
+        template: `
+          <div>
+            <h2>NBA球星世界</h2>
+            <p>我是kobe，我是mvp!!!!</p>
+          </div>
+        `
+      });
+
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+		// 注册局部组件(局部组件注册语法糖)
+        components: {
+          'cpn2': {
+            template: `
+               <div>
+                <h2>NBA球星世界</h2>
+                <p>我是Curry，我是三分王!!!!</p>
+              </div>
+            `
+          }
+        }
+      })
+  </script>
+</body>
+</html>

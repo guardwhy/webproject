@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>原型对象</title>
+</head>
+<body>
+<script>
+	/*
+	  原型 prototype:
+	1.每当创建的每一个函数,解析器都会向函数中添加一个属性prototype。
+	这个属性对应着一个对象，这个对象就是我们所谓的原型对象。函数作为普通函数调用prototype没有任何作用。
+
+	2.当函数以构造函数的形式调用时，它所创建的对象中都会有一个隐含的属性，指向该构造函数的原型对象。
+	  可以通过__proto__来访问该属性。
+
+	3.原型对象就相当于一个公共的区域，所有同一个类的实例都可以访问到这个原型对象，可以将对象中共有的内容，统一设置到原型对象中。
+
+	4.当访问对象的一个属性或方法时，它会先在对象自身中寻找，如果有则直接使用，如果没有则会去原型对象中寻找，如果找到则直接使用。
+
+	5.以后创建构造函数时，可以将这些对象共有的属性和方法，统一添加到构造函数的原型对象中。
+	  这样不用分别为每一个对象添加，也不会影响到全局作用域，就可以使每个对象都具有这些属性和方法了。
+  */
+  // 1. 构造函数的问题.
+  function Star(uname, age) {
+    this.name = uname;
+    this.age = age;
+    console.log("姓名:" + uname);
+  }
+
+  // 2. 一般情况下,我们的公共属性定义到构造函数里面, 公共的方法我们放到原型对象身上
+  Star.prototype.sing = function () {
+    console.log(", 我会唱歌");
+  };
+
+  let ldh = new Star('刘德华', 18);
+  let zxy = new Star('张学友', 19);
+  // console.log(ldh.sing === zxy.sing);
+
+  ldh.sing();
+  zxy.sing();
+
+</script>
+</body>
+</html>

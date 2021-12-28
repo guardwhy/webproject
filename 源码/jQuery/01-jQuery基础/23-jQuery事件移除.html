@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件绑定移除</title>
+  <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<button>按钮</button>
+<script type="text/javascript">
+  $(function (){
+    function Func1(){
+      alert("hello jquery!!!");
+	}
+	function Func2(){
+      alert("hello guardwhy!!!");
+	}
+	// 1.绑定操作
+	$("button").click(Func1);
+    $("button").click(Func2);
+
+    /*$("button").mouseleave(function (){
+      alert("移出事件...");
+	});
+    $("button").mouseenter(function (){
+      alert("移入事件...");
+	});*/
+
+    // 2.1 off方法如果不传递参数, 会移除所有的事件
+	// $("button").off();
+
+    // 2.2 off方法如果传递一个参数, 会移除所有指定类型的事件
+	// $("button").off("click");
+
+    // 2.3 off方法如果传递两个参数, 会移除所有指定类型的指定事件
+	$("button").off("click", Func1);
+  });
+</script>
+</body>
+</html>

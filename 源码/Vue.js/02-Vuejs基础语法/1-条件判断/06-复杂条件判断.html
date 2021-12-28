@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>复杂条件判断</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <h3>{{result}}</h3>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          score: 50
+        },
+
+        // 计算属性
+        computed: {
+          result(){
+            // 定义成绩变量
+            let showMessage = '';
+            // 条件判断
+            if(this.score >= 90){
+              showMessage = '优秀'
+            }else if(this.score >= 80){
+              showMessage = '良好'
+            }else if(this.score >= 70){
+              showMessage = '一般'
+            }else if(this.score >= 60){
+              showMessage = '及格'
+            }else{
+              showMessage = '不及格'
+            }
+            return showMessage
+          }
+        }
+      })
+  </script>
+</body>
+</html>

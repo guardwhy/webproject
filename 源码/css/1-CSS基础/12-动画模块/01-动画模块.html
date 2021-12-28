@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动画模块</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	div{
+		width: 200px;
+		height: 50px;
+		background-color: red;
+		/*告诉系统需要执行的动画*/
+		animation-name: guardwhy;
+		/*动画持续的时长*/
+		animation-duration: 3s;
+	}
+
+	/*告诉系统自己创建的动画*/
+	@keyframes guardwhy {
+		from{
+			margin-left: 0;
+		}
+		to{
+			margin-left: 500px;
+		}
+    }
+  </style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

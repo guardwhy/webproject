@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组添加元素</title>
+  <script type="text/javascript">
+	// 定义arr数组
+	let arr = [1,2,3,8,10];
+
+    // 1.数组的filter方法:将满足条件的元素添加到一个新的数组中
+	let newArray1 = arr.filter(function (currentValue, currentIndex, currentArray){
+	  // 条件判断
+	  if(currentValue % 2 === 0){
+	    return true;
+	  }
+	});
+	// 输出新数组
+	console.log(newArray1);
+
+	console.log("++++++++++");
+
+    // 2.数组的map方法:将满足条件的元素映射到一个新的数组中.
+    let newArray2 = arr.map(function (currentValue, currentIndex, currentArray){
+      // 条件判断
+      if(currentValue % 2 === 0){
+        return currentValue;
+      }
+    });
+    // 输出新数组
+    console.log(newArray2);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

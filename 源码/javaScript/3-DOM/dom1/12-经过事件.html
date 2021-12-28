@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>经过事件</title>
+  <style type="text/css">
+	body,html{
+		height: 100%;
+	}
+  </style>
+</head>
+<body>
+<span class="span"></span>
+<script>
+
+  let OM = document.querySelector("span");
+  onmousemove = function(event){
+    // 点击位置距离当前body可视区域的x，y坐标
+    OM.innerHTML = event.clientX + ',' + event.clientY;
+  };
+</script>
+</body>
+</html>

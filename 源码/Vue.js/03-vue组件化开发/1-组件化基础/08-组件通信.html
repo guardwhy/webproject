@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>父组件向子组件传递参数</title>
+</head>
+<body>
+    <div id="app">
+	  <!--3.使用组件-->
+	  <!--绑定属性-->
+      <cpn1 :cmessage="message" :cstarts="starts"></cpn1>
+    </div>
+
+    <!--创建模板-->
+    <template id="cpn">
+      <div>
+        <ul>
+          <li v-for="item in cstarts">{{item}}</li>
+        </ul>
+        <h3>{{cmessage}}</h3>
+      </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      const cpn1 = {
+        // 定义模板
+        template: '#cpn',
+        // 父组件向子组件传递内容(父传子: props)
+        props: {
+          // 类型限制,提供默认值，和及其必传值
+          cmessage: {
+            type: String,
+            dafault: 'Curry',
+            required: true
+          },
+
+          // 类型是数组或者对象类型时候，默认值必须是一个函数
+          cstarts: {
+            type: Array,
+            default(){
+              return []
+            }
+          }
+        }
+      }
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          message: 'hello world!',
+          starts: ['kobe', 'Jmaes', 'Curry', 'Duncan']
+        },
+
+        // 注册组件
+        components: {
+          cpn1
+        }
+      })
+  </script>
+</body>
+</html>

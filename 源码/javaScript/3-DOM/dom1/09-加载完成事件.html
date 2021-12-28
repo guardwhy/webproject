@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>加载完成事件</title>
+  <style type="text/css">
+      #myDiv{width: 100px;
+		  height: 100px;
+		  background: green;}
+  </style>
+</head>
+<body>
+<div id=myDiv></div>
+<script>
+  // 函数一开始是不执行的：整个浏览器窗口加载完毕以后才执行
+  window.onload = function(){
+    setTimeout(function(){
+      document.querySelector("#myDiv").style.height = '200px';
+    },1000);
+  };
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>元素属性操作</title>
+</head>
+<body>
+<img src="../images/timg.jpg" alt="歼20" title="第五代隐形战斗机" ts="123">
+<script type="text/javascript">
+  // 1.获取元素属性
+  let myImg1 = document.querySelector("img");
+  /*
+   注意点:通过对象.属性名称的方式无法获取到自定义属性的取值。
+  		通过getAttribute方法可以获取到自定义属性的取值
+  */
+
+  // 输出结果
+  console.log("alt属性:" + myImg1.getAttribute("alt"));
+  // 自定义属性
+  console.log("TS属性:" + myImg1.getAttribute("TS"));
+
+  // 2.修改元素属性
+  let myImg2 = document.querySelector("img");
+  // 设置属性
+  myImg2.setAttribute("title", "帅气的五代机");
+  myImg2.setAttribute("ts", "牛逼！！！");
+
+  // 3.新增元素属性
+  let myImg3 = document.querySelector("img");
+  myImg3.setAttribute("nb", "隐形机");
+  myImg3.setAttribute("nt", "漂亮");
+
+  // 4.删除元素属性
+  let myImg4 = document.querySelector("img");
+  myImg4.removeAttribute("nb");
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>下拉菜单</title>
+  <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      .nav{
+          list-style: none;
+          width: 300px;
+          margin: 100px auto;
+      }
+      .nav>li{
+          border: 1px solid #000;
+          line-height: 35px;
+          border-bottom: none;
+          text-indent:2em;
+          position: relative;
+      }
+      .nav>li:last-child{
+          border-bottom: 1px solid #000;
+          border-bottom-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+      }
+      .nav>li:first-child{
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+      }
+      .nav>li>span{
+          background: url("images/arrow_right.png") no-repeat center center;
+          display: inline-block;
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          right: 10px;
+          top: 5px;
+      }
+      .sub{
+          display: none;
+      }
+      .sub>li{
+          list-style: none;
+          background: mediumpurple;
+          border-bottom: 1px solid white;
+      }
+      .sub>li:hover{
+          background: red;
+      }
+      .nav>.current>span{
+          transform: rotate(90deg);
+      }
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    $(function (){
+      /*
+	  在jQuery中如果需要执行动画, 建议在执行动画之前先调用stop方法,然后再执行动画
+	  */
+	  // 1.1监听一级菜单的移入事件
+	  $(".nav>li").mouseenter(function (){
+	    // 1.2拿到二级菜单
+		let $sub = $(this).children(".sub");
+		// 1.3.停止当前的正在运行的动画
+		$sub.stop();
+		// 1.4 让二级菜单展开
+		$sub.slideDown(1000);
+	  });
+	  // 2.监听一级菜单的移出事件'
+      $(".nav>li").mouseleave(function (){
+        // 1.2拿到二级菜单
+        let $sub = $(this).children(".sub");
+        // 1.3.停止当前的正在运行的动画
+        $sub.stop();
+        // 1.4 让二级菜单展开
+        $sub.slideUp(1000);
+      });
+    });
+  </script>
+</head>
+<body>
+<ul class="nav">
+  <li>计算机语言<span></span>
+	<ul class="sub">
+	  <li>java</li>
+	  <li>javaScript</li>
+	  <li>HTML</li>
+	  <li>Python</li>
+	  <li>C++</li>
+	</ul>
+  </li>
+</ul>
+</body>
+</html>

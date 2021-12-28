@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>关闭广告</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	div{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+	}
+	div>img:first-child{
+		position: absolute;
+		right: 0;
+		top: -17px;
+	}
+  </style>
+</head>
+<body>
+<div>
+  <img src="../images/close.jpg" alt="">
+  <img src="../images/sina-ad.png" alt="">
+</div>
+
+<script type="text/javascript">
+  let oIbtn = document.querySelector("div>img:first-child");
+  // 1.点击事件
+	oIbtn.onclick = function (){
+	  let oDiv = this.parentNode;
+	  // 2.删除广告元素
+	  oDiv.parentNode.removeChild(oDiv);
+	}
+</script>
+</body>
+</html>

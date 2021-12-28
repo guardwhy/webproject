@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>值绑定</title>
+</head>
+<body>
+      <div id="app">
+        <label v-for="item in originHobbies" :for="item">
+          <input type="checkbox" :value="item"  v-model="hobbies">{{item}}
+        </label>
+        <h3>您的爱好是: {{hobbies}}</h3>
+      </div>
+
+      <script src="../js/vue.js"></script>
+      <script>
+        // 创建对象
+        const app = new Vue({
+          // 挂载要管理的元素
+          el: '#app',
+
+          // 定义数据
+          data: {
+            hobbies: [],
+            originHobbies: ['篮球', '足球', '乒乓球', '羽毛球', '台球', '高尔夫球']
+          }
+        })
+    </script>
+</body>
+</html>

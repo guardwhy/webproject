@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>高阶函数</title>
+</head>
+<body>
+  <script type="text/javascript">
+    // 创建数组nums
+    const nums = [10, 20, 111, 222, 444, 40, 50];
+
+    /*
+    1.filter函数的使用
+      filter中的回调函数有一个要求: 必须返回一个boolean值。
+      true: 当返回true时, 函数内部会自动将这次回调的n加入到新的数组中
+      false: 当返回false时, 函数内部会过滤掉这次的n。
+     */
+    let newNums = nums.filter(function (n) {
+      return n < 100
+    });
+     console.log(newNums);
+
+    // 2. map函数的使用
+    let new2Nums = newNums.map(function (n) {
+      return n * 2;
+    });
+    // 输出结果
+    console.log(new2Nums);
+
+    // 3. reduce函数的使用:reduce作用对数组中所有的内容进行汇总。
+   let total1 =  new2Nums.reduce(function (preValue, n) {
+      return preValue + n;
+    }, 0)
+
+    // 输出结果值
+    console.log("total1：" + total1);
+
+   // 函数式编程
+    let total2 = nums.filter(function (n) {
+      return n < 100;
+    }).map(function (n) {
+      return n * 2;
+    }).reduce(function (prevValue, n) {
+      return prevValue + n;
+    }, 0);
+
+    // 输出total2
+    console.log("total2：" + total2);
+
+    // 5.ES6方式实现
+	let total3 = nums.filter(n=>n <100).map(n => n * 2).reduce((pre, n) => pre + n);
+	console.log("total3：" + total3);
+  </script>
+</body>
+</html>

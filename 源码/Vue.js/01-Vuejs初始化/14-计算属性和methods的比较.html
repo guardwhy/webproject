@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算属性和methods的比较</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+     <!--直接拼接-->
+      <h2>{{firstName}} {{lastName}}</h2>
+      <!--2.通过定义methods-->
+      <h2>{{getFullName()}}</h2>
+
+      <!--3.通过computed-->
+      <h2>{{fullName}}</h2>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          firstName: 'kobe',
+          lastName: 'Bryant'
+        },
+
+        // 函数
+        methods: {
+          getFullName: function () {
+            console.log('fullName');
+            // 返回值
+            return this.firstName + ' ' + this.lastName;
+          }
+        },
+
+        // 计算属性
+        computed: {
+          fullName: function () {
+            console.log('fullName');
+            return this.firstName + ' ' + this.lastName
+          }
+        }
+
+      })
+  </script>
+</body>
+</html>

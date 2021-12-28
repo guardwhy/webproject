@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>清除浮动3</title>
+  <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      p{
+          float: left;
+      }
+      .box1{
+          background-color: green;
+      }
+      .box2{
+          background-color: rebeccapurple;
+      }
+      .box1 p{
+          width: 100px;
+          background-color: darkorange;
+      }
+      .box2 p{
+          width: 100px;
+          background-color: cyan;
+      }
+
+	  .st1{
+		  clear: both;
+	  }
+	  .st2{
+		  clear: both;
+		  height: 20px;
+		  background-color: yellow;
+	  }
+  </style>
+</head>
+<body>
+  <div class="box1">
+	<p>javaSE1</p>
+	<p>javaWEB2</p>
+	<p>javaEE3</p>
+	<!--内墙法-->
+	<div class="st2"></div>
+  </div>
+  <!--外墙法-->
+  <!--<div class="st1"></div>-->
+  <div class="box2">
+	<p>javaSE4</p>
+	<p>javaWEB5</p>
+	<p>javaEE6</p>
+  </div>
+</body>
+</html>

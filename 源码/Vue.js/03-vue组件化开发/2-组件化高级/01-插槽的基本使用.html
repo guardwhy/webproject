@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>slot-插槽的基本使用</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <cpn></cpn>
+      <cpn><span>php是最好的语言!!!</span></cpn>
+      <cpn><i>python一出，谁与争锋!!</i></cpn>
+    </div>
+
+    <template id="cpn">
+      <div>
+        <h2>我是组件</h2>
+        <p>我是子组件模板</p>
+		<!--设定默认值-->
+        <slot><button>按钮</button></slot>
+      </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          message: 'hello world!'
+        },
+        components: {
+          cpn:{
+            template:'#cpn'
+          }
+        }
+      })
+  </script>
+</body>
+</html>

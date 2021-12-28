@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组常用方法</title>
+  <script type="text/javascript">
+	// 定义数组
+	let array1 = [1,2,3,4,5];
+	// 1.清空数组
+	array1.splice(0, array1.length);
+    console.log("array1数组:" + "[" + array1 + "]");
+    console.log("++++++++++++++");
+
+    // 2.数组转换为字符串
+    let array2 = [1,2,3,4,5];
+	let str = array2.toString();
+	console.log("str字符串:" + str);
+	console.log("str数据类型:" + typeof str);
+    console.log("++++++++++++++");
+
+    // 3.将两个数组拼接为一个数组
+	// 3.1 方式一
+	let num1 = [1,3,4,5];
+	let num2 = [1,3,6,9];
+	// 用加号进行拼接会先转换成字符串再拼接.
+	let res1 = num1.concat(num2);
+	console.log("res1数组:" + res1);
+	console.log("res1数组数据类型:" + typeof res1);
+    console.log("==================");
+
+	// 3.2 方式二
+    let array3 = [1,10,4,6];
+    let array4 = [1,5,6,11];
+    /*
+    扩展运算符在解构赋值中表示将剩余的数据打包成一个新的数组.
+    扩展运算符在等号右边, 表示将数组中所有的数据解开, 放到所在的位置.
+    */
+	let res2 = [...array3, ...array4];
+    console.log("res2数组:" + res1);
+    console.log("res2数组数据类型:" + typeof res1);
+    console.log("==================");
+
+    // 4.对数组中的内容进行反转
+	let num3 = [1,2,3,4,5];
+	let res3 = num3.reverse();
+    console.log("res3数组:" + res3);
+    console.log("res3数组数据类型:" + typeof res3);
+    console.log("==================");
+
+    // 5.截取数组中指定范围内容
+    let num4 = [1,2,3,4,5];
+    // slice方法是包头不包尾(包含起始位置, 不包含结束的位置)
+	let res4 = num4.slice(1,3);
+    console.log("res4数组:" + res4);	// res4数组:2,3
+    console.log("num4数组:" + num4);
+    console.log("==================");
+
+    // 6.查找元素在数组中的位置
+	let num5 = [1, 2, 3, 4, 5, 3];
+	/*
+	 indexOf方法如果找到了指定的元素, 就会返回元素对应的位置,如果没有找到指定的元素, 就会返回-1.
+     注意点: indexOf方法默认是从左至右的查找, 一旦找到就会立即停止查找。
+	*/
+	let res5 = num5.indexOf(3);
+	console.log("元素索引:" + res5);
+	// 6.1 从什么位置开始查找
+    let res6 = num5.indexOf(3, 4);
+    console.log("元素索引:" + res6);	// 元素索引:5
+	// 6.2 lastIndexOf方法默认是从右至左的查找, 一旦找到就会立即停止查找
+	let res7 = num5.lastIndexOf(3, 4);
+    console.log("元素索引:" + res7);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

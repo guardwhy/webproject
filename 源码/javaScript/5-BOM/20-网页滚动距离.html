@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>网页滚动距离</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	p{
+		line-height: 50px;
+		width: 200%;
+	}
+  </style>
+</head>
+<body>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<script type="text/javascript">
+  window.onscroll = function (){
+    // 调用函数
+    let{x,y} = getPageScroll();
+    console.log(x,y);
+
+    // 创建函数
+	function getPageScroll(){
+	  let x, y;
+	  // 条件判断
+	  if(window.pageXOffset){
+	    x = window.pageXOffset;
+	    y = window.pageYOffset;
+	  }else if(document.compatMode === "BackCompat"){
+	    x = document.body.scrollLeft;
+	    y = document.body.scrollTop;
+	  }else{
+	    x = document.documentElement.scrollLeft;
+	    y = document.documentElement.scrollTop;
+	  }
+	  return{
+	    x: x,
+		y: y
+	  }
+	}
+  }
+</script>
+</body>
+</html>

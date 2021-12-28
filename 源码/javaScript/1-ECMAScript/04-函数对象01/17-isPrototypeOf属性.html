@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>isPrototypeOf属性</title>
+</head>
+<body>
+	<script type="text/javascript">
+      function Person(myName){
+        this.name = myName;
+      }
+      function Student(myName, myScore){
+        Person.call(this, myName);
+        this.score = myScore;
+      }
+
+      Student.prototype = new Person();
+      Student.prototype.constructor = Student;
+
+      // 实例化对象
+      let obj = new Student();
+      console.log(Person.prototype.isPrototypeOf(obj));	// true
+	</script>
+</body>
+</html>

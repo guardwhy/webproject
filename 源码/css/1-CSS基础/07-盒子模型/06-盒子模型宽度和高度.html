@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>盒子模型宽度和高度</title>
+  <style type="text/css">
+	.box1{
+		width: 100px;
+		height: 100px;
+		padding: 25px;
+		background-color: purple;
+	}
+
+    /*元素宽高= 边框+内边距+内容宽度/内容高度等于200*/
+	.box2{
+		width: 150px;
+		height: 150px;
+        border: 25px solid #000;
+		background-color: blue;
+	}
+	.box3{
+		width: 150px;
+		height: 150px;
+		padding: 20px;
+        border: 5px solid #000;
+		background-color: greenyellow;
+	}
+
+    /*元素空间宽高=外边距+边框+内边距+内容宽度/内容高度 */
+	.box4{
+		width: 100px;
+		height: 100px;
+		padding:25px;
+        border: 25px solid #000;
+		margin: 50px;
+	}
+  </style>
+</head>
+<body>
+	<!--<div class="box1">box1</div><br/>
+	<div class="box2">box2</div><br/>
+	<div class="box3">box3</div>-->
+	<div class="box4">box4</div>
+</body>
+</html>

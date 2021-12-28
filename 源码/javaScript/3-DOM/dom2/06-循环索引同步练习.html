@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>循环索引同步</title>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+
+<script type="text/javascript">
+  // 循环同步
+  let btns = document.querySelectorAll("button");
+  // 条件遍历
+  for(var i=0; i<btns.length; i++){
+    let btn = btns[i];
+	(function test(index){
+      // 注意点: onclick对应的方法由于满足了闭包的条件, 所以onclick对应的方法也是一个闭包
+	  btn.onclick = function (){
+	    console.log(index);
+	  }
+	})(i)
+  }
+</script>
+</body>
+</html>

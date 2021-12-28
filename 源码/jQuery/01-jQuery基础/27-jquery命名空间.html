@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jquery命名空间</title>
+  <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      .div1{
+          width: 200px;
+          height: 200px;
+          background: green;
+      }
+      .div2{
+          width: 100px;
+          height: 100px;
+          background: gray;
+      }
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+	事件的命名空间有效, 必须满足两个条件
+	1.事件必须是通过on绑定的
+	2.事件必须通过trigger来触发
+	*/
+    $(function (){
+      $(".div2").on("click.curry", function (){
+        alert("jquery事件的命名空间1");
+      });
+      $(".div2").on("click.james", function (){
+        alert("jquery事件的命名空间2");
+      });
+
+      $(".div2").trigger("click.james");
+    });
+  </script>
+</head>
+<body>
+<div class="div1">
+  <div class="div2"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery核心函数</title>
+  <script src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<div class="box1"></div>
+<div id="box2"></div>
+<span>桃李春风一杯酒，江湖夜雨十年灯</span>
+<script type="text/javascript">
+  // $();jQuery原理();就代表调用jQuery的核心函数
+  // 1.接收一个函数
+  $(function (){
+    // 输出结果
+	console.log("hello jQuery");
+	// 2.接收一个字符串
+	// 返回一个jQuery对象,对象中保存了找到的DOM元素
+	let $box1 = $(".box1");
+	let $box2 = $("#box2");
+	// 输出结果
+	console.log($box1);
+	console.log($box2);
+    // 接收一个字符串代码片段
+	let $p = $("<p>窗外日光弹指过，席间花影坐前移。</p>");
+	console.log($p);
+	$box1.append($p);
+	// 3.接收一个DOM元素,会被包装成一个jQuery对象返回
+	let span = document.getElementsByTagName("span")[0];
+	console.log(span);
+	let $span = $(span);
+	console.log($span);
+  });
+</script>
+</body>
+</html>

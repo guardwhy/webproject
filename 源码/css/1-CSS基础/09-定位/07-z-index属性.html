@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>z-index属性</title>
+  <style type="text/css">
+	.box1{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		position: relative;
+		z-index: 2;
+	}
+    .box2{
+        width: 200px;
+        height: 200px;
+        background-color: green;
+        position: relative;
+        z-index: 3;
+    }
+    .st1{
+        width: 100px;
+        height: 100px;
+        background-color: darkorange;
+        position: absolute;
+		left: 200px;
+		top: 200px;
+        z-index: 1;
+    }
+    .st2{
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        position: absolute;
+        left: 250px;
+        top: 50px;
+        z-index: 2;
+    }
+  </style>
+</head>
+<body>
+	<div class="box1">
+	  <div class="st1"></div>
+	</div>
+	<div class="box2">
+	  <div class="st2"></div>
+	</div>
+</body>
+</html>

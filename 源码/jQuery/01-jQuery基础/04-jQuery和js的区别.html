@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery和js的区别</title>
+  <script src="js/jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+     /*window.onload = function (event){
+       console.log("--js原生实现--")
+	   // 1.通过原生的JS入口函数可以拿到DOM元素
+	   let image = document.getElementsByTagName("img")[0];
+	   console.log(image);
+
+	   // 2.通过原生JS入口函数可以拿到DOM元素
+	   let width = window.getComputedStyle(image).width;
+	   console.log(width);
+	 }
+
+    $(document).ready(function (){
+      console.log("---jquery实现---")
+      // 1.通过jQuery入口函数可以拿到DOM元素
+      let $img = $("img");
+      console.log($img);
+      // 2.通过jQuery入口函数不可以拿到DOM元素的宽高
+	  let $width = $img.width();
+	  console.log($width);
+    });*/
+
+     /*
+     1.原生的JS如果编写了多个入口函数,后面编写的会覆盖前面编写的
+     2.jQuery中编写多个入口函数,后面的不会覆盖前面的
+     */
+	 window.onload = function (event){
+	   console.log("JS-hello guardwhy1");
+	 }
+	 window.onload = function (event){
+	   console.log("JS-hello guardwhy2");
+	 }
+
+	 $(document).ready(function (){
+	   console.log("jQ-hello guardwhy01");
+	 });
+     $(document).ready(function (){
+       console.log("JQ-hello guardwhy02");
+     });
+  </script>
+</head>
+<body>
+<img src="https://img.alicdn.com/tfs/TB1P_MofwmTBuNjy1XbXXaMrVXa-190-140.gif" alt="">
+
+</body>
+</html>

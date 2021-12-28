@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jquery移入移出事件</title>
+  <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      .div1{
+          width: 200px;
+          height: 200px;
+          background: green;
+      }
+      .div2{
+          width: 100px;
+          height: 100px;
+          background: gray;
+      }
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+
+    $(function (){
+      /*
+	   子元素被移入移出不会触发父元素的事件
+	  */
+
+	  /*
+		$(".div1").hover(function (){
+		  console.log("div1被移入了..");
+		}, function (){
+		  console.log("div1被移出了");
+		})
+	  */
+	  $(".div1").hover(function (){
+	    // 输出结果
+		console.log("div1被移入移出了.....");
+	  });
+    });
+  </script>
+</head>
+<body>
+<div class="div1">
+  <div class="div2"></div>
+</div>
+</body>
+</html>

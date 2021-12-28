@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery删除节点</title>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    $(function (){
+      /*
+	  删除: remove([expr])
+	  删除指定元素: empty()
+	  删除指定元素的内容和子元素, 指定元素自身不会被删除: detach([expr])
+	  */
+      $("button").click(function (){
+		// $("div").remove();
+		// $("div").empty();
+		// $("li").remove(".item");
+
+        // 1.利用remove删除之后再重新添加,原有的事件无法响应
+		/*
+		let $div = $("div").remove();
+		console.log($div);
+		*/
+
+        // 2.利用detach删除之后再重新添加,原有事件可以响应
+		let $div = $("div").detach();
+		console.log($div);
+		$("body").append($div);
+      });
+    });
+  </script>
+</head>
+<body>
+<button>删除节点</button>
+<ul>
+  <li class="item">第1个li</li>
+  <li>第2个li</li>
+  <li class="item">第3个li</li>
+  <li>第4个li</li>
+  <li class="item">第5个li</li>
+</ul>
+<div>
+  第一个div
+  <p>第一个段落</p>
+</div>
+</body>
+</html>

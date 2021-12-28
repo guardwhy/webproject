@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>侧轴对齐方式</title>
+  <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      ul{
+          list-style: none;
+          width: 600px;
+		  height: 300px;
+          border: 1px solid #000;
+          display: flex;
+          /*告诉浏览器主轴的起点在伸缩容器的最左边,告诉浏览器伸缩项从左至右的排版*/
+          flex-direction: row;
+          /*告诉浏览器排版好的伸缩项需要和主轴的起点对齐*/
+          justify-content: flex-start;
+
+          /*告诉浏览器排版好的伸缩项需要和侧轴的起点对齐*/
+          /*align-items: flex-start;*/
+          /*align-items: flex-end;*/
+          /*align-items: center;*/
+
+          /*
+			注意点: 侧轴对比主轴来说没有两端对齐(space-between)和环绕对齐(space-around)
+		  */
+          /*baseline: 让所有伸缩项中的基线在一条直线上对齐*/
+          /*align-items: baseline;*/
+
+		  align-items: stretch;
+      }
+      ul>li{
+          width: 100px;
+          line-height: 100px;
+          text-align: center;
+          font-size: 30px;
+          background: red;
+      }
+      ul>li:nth-child(2){
+          background: cyan;
+      }
+      ul>li:nth-child(3){
+          background: rebeccapurple;
+      }
+  </style>
+</head>
+<body>
+  <ul>
+	<li>java</li>
+	<li>python</li>
+	<li>html</li>
+  </ul>
+</body>
+</html>

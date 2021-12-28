@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>得到焦点和失去焦点</title>
+</head>
+<body>
+<input type="text" id="txt">
+
+</body>
+<script>
+  // 获得文本对象
+  let txt = document.querySelector("#txt");
+
+  // 得到焦点
+  txt.onfocus = function(){
+
+    txt.style.background = "red";
+  }
+
+  // 失去焦点
+  txt.onblur = function(){
+
+    txt.style.background = "blue";
+  }
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获取对象类型</title>
+  <script type="text/javascript">
+	// 1.创建obj对象
+	let obj1 = new Object();
+    console.log("类型:" + typeof obj1);	// 类型:Object
+
+    // 2.定义数组类型
+	let array = new Array();
+    console.log("类型:"+ array.constructor.name);	// 类型:Array
+
+	// 3.对象类型
+	function Person(){
+	  this.name = "guardwhy";
+	  this.age = 21;
+	  this.message = function (){
+        console.log("姓名:" + this.name, "年龄:" + this.age);
+	  }
+	}
+
+	// 实例化对象
+	let obj2 = new Person();
+    console.log("类型:" + obj2.constructor.name);	// 类型:Person
+  </script>
+</head>
+<body>
+
+</body>
+</html>

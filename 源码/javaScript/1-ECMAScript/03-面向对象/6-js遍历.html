@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js遍历</title>
+  <script type="text/javascript">
+    // 遍历对象
+    let obj = {
+      name: 'Rondo老师',
+      age: 18,
+      sex: '男',
+      fn: function() {}
+    }
+    // for (变量 in 对象) {
+
+    // }
+    for (let k in obj) {
+      /*
+      console.log(k); // k 变量 输出  得到的是 属性名
+      console.log(obj[k]); // obj[k] 得到是 属性值
+      */
+	  console.log(k +":" + obj[k]);
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

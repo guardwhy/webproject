@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES6继承</title>
+</head>
+<body>
+	<script type="text/javascript">
+	  class Person{
+	    // 构造函数
+		constructor(myName, myAge) {
+		  this.name = myName;
+		  this.age = myAge;
+        }
+        message(){
+          console.log("姓名:"+ this.name + ",年龄:"+ this.age);
+		}
+	  }
+      /*
+		在ES6中如何继承
+		1.在子类后面添加extends并指定父类的名称
+		2.在子类的constructor构造函数中通过super方法借助父类的构造函数
+	  */
+	  class Student extends Person{
+	    constructor(myName, myAge, myScore) {
+          // 在子类中通过call/apply方法借助父类的构造函数
+          super(myName, myAge);
+          this.score = myScore;
+        }
+        study(){
+	      console.log("javaScript 牛逼!!!");
+		}
+	  }
+
+	  // 实例化对象
+	  let obj = new Student("guardwhy", 17, 98);
+	  // 对象调用方法
+	  obj.message();
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>对象深拷贝</title>
+  <script type="text/javascript">
+	// 创建Person类
+	class Person{
+	  name="Curry";
+	  Student = {
+	    age: 10
+	  };
+	  scores = [45, 68, 89];
+	}
+	// 创建obj1对象
+	let obj1 = new Person();
+	let obj2 = new Object();
+
+	// 调用函数
+	depCopy(obj2, obj1);
+	obj2.Student.age = 11;
+	// 输出结果
+    console.log("obj1年龄:" + obj1.Student.age);
+    console.log("obj2年龄:" + obj2.Student.age);
+
+    function depCopy(target, source){
+      // 1.通过遍历拿到source中所有的属性
+	  for(let key in source){
+	    // 2.取出当前遍历到的属性对应的取值
+		let sourceValue = source[key];
+		// 3.判断当前的取值是否是引用数据类型
+		if(sourceValue instanceof  Object){
+		  let subTarget = new sourceValue.constructor;
+		  target[key] = subTarget;
+		  depCopy(subTarget, sourceValue);
+		}else {
+		  target[key] = sourceValue;
+		}
+	  }
+	}
+  </script>
+</head>
+<body>
+
+</body>
+</html>

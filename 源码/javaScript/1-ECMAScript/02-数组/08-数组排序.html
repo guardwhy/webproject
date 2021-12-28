@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组排序</title>
+  <script type="text/javascript">
+	// 1.定义数组
+	let arr = ["c", "a", "b", "d"];
+	// 排序
+	arr.sort();
+	console.log(arr);
+	console.log("++++++++++");
+
+	// 2.定义数组
+    let arr2 = [3, 4, 2, 5, 1];
+    // 排序
+    arr2.sort(function (a, b) {
+      /*
+      排序规律:如果数组中的元素是数值类型
+      如果需要升序排序, 那么就返回a - b;
+      如果需要降序排序, 那么就返回b - a;
+      */
+      // return a - b;
+       return b - a;
+    });
+    console.log(arr2);
+    console.log("===========");
+
+    // 3.定义数组
+    let arr3 = ["34", "21", "54321", "123", "6"];
+    // 排序操作
+	arr3.sort(function (str1, str2){
+	  // 升序排序
+      return str1.length - str2.length;
+	  // return str2.length - str1.length;
+	});
+	console.log(arr3);
+    console.log("------------");
+
+	// 4.定义数组
+	let students = [
+	  {name:"curry", age:10},
+	  {name:"kobe",age: 33},
+	  {name:"James", age: 36},
+	  {name:"Rondo",age: 34},
+	]
+	// 排序操作
+	students.sort(function (o1, o2){
+      // 降序排序
+	  return o2.age - o1.age;
+	});
+	// 输出结果
+	console.log(students);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

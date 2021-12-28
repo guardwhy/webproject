@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>普通对象深拷贝</title>
+  <script type="text/javascript">
+	// 创建Person类
+	class Person{
+	  name="guardwhy";
+	  age = 27;
+	}
+
+	// 创建obj1对象
+	let obj1 = new Person();
+	// 深拷贝
+	let obj2 = new Object();
+    // assign方法可以将第二个参数的对象的属性和方法拷贝到第一个参数的对象中
+	Object.assign(obj2, obj1);
+	obj2.name = "Curry";
+	console.log("obj2:"+ obj2.name);
+	console.log("obj1:" + obj1.name);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

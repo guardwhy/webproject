@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据列表展示</title>
+</head>
+<body>
+    <div id="test">
+        <ul>
+            <!--遍历操作-->
+            <li v-for="item in starts">{{item}}</li>
+        </ul>
+    </div>
+    <!--引入vue.js文件-->
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+        // 创建对象
+        const test = new Vue({
+            el: '#test',
+            data : {
+                message: '你好啊',
+                starts: ['kobe', 'LeBron James', 'Stephen Curry']
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-for遍历数组</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <!--在遍历的过程中,没有使用索引值(下标值)-->
+      <ul>
+        <li v-for="item in names">{{item}}</li>
+      </ul>
+
+      <!--在遍历的过程中, 获取索引值-->
+      <ul>
+        <li v-for="(item, index) in names">{{index+1}}.{{item}}</li>
+      </ul>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+         names: ['guardWhy', 'kobe', 'james', 'curry']
+        }
+      })
+  </script>
+</body>
+</html>

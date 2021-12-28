@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟计数器</title>
+</head>
+<body>
+    <!--创建一个div-->
+    <div id="app">
+        <h3>当前计数:{{counter}}</h3>
+
+        <!--监听元素的点击事件-->
+        <button v-on:click="add">+</button>
+        <button v-on:click="sub">-</button>
+    </div>
+    <script src="js/vue.js"></script>
+    <script type="text/javascript">
+        // 创建对象
+        const app = new Vue({
+            el: '#app',
+            data: {
+                // 定义当前计数为0
+                counter: 0
+            },
+            // 定义方法
+            methods: {
+                add: function () {
+                    console.log('add被指行');
+                    this.counter++
+                },
+                sub: function () {
+                    console.log('sub被执行了..');
+                    this.counter--
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

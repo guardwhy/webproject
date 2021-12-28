@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组件化的基本使用</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <!--3.使用组件-->
+      <cpn></cpn>
+	  <div>
+		<cpn></cpn>
+	  </div>
+    </div>
+	<cpn></cpn>
+    <script src="../js/vue.js"></script>
+    <script>
+
+      // 1.创建组件化构造器对象
+      const cpnC = Vue.extend({
+        // 模板
+        template: `
+          <div>
+              <h2>NBA球星名单</h2>
+              <p>我是kobe,我是总冠军!!!</p>
+              <p>我是Curry,我是三分雨!!!</p>
+          </div>`
+      });
+
+      // 2.注册组件，并且定义组件标签的名称
+      Vue.component('cpn', cpnC)
+
+
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app'
+      })
+  </script>
+</body>
+</html>

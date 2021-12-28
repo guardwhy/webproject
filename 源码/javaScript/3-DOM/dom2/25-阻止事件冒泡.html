@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>阻止事件冒泡</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.div1{
+		width: 300px;
+		height: 300px;
+		background: green;
+	}
+	.div2{
+		width: 150px;
+		height: 150px;
+		background: blueviolet;
+	}
+  </style>
+</head>
+<body>
+<div class="div1" id="S1">
+  <div class="div2" id="S2"></div>
+</div>
+<script type="text/javascript">
+  // 1.拿到需要操作的元素
+  let oS1 = document.getElementById("S1");
+  let oS2 = document.getElementById("S2");
+  // 2.注册事件监听
+  oS1.onclick = function (){
+    console.log("S1");
+  }
+
+  oS2.onclick = function (event){
+    event = event || window.event;
+    // stopPropagation方法只支持高级浏览器，cancelBubble支持低级浏览器
+	if(event.cancelBubble){
+	  event.cancelBubble = true;
+	}else {
+	  event.stopPropagation();
+	}
+	// 输出s2
+	console.log("S2");
+  }
+</script>
+</body>
+</html>

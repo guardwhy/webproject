@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!--网页编码的类型-->
+  <meta charset="utf-8">
+  <!--使用最新的支持H5浏览器内核来解析-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--
+  视口：在浏览器中一个虚拟的网页容器。参数：网页的宽度设置为设备的宽度 初始缩放比: 1:1
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签必须放在最前面，任何其他内容都必须跟随其后！ -->
+  <title>Bootstrap的可切换导航栏</title>
+
+  <!-- 导入文件：bootstrap.css -->
+  <link href="../static/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<ul id="myTab" class="nav nav-tabs">
+  <li class="active">
+	<a href="#c" data-toggle="tab">
+	  c语言
+	</a>
+  </li>
+  <li><a href="#java" data-toggle="tab">java</a></li>
+  <li class="dropdown">
+	<a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">其他类型语言<b class="caret"></b></a>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+	  <li><a href="#python" tabindex="-1" data-toggle="tab">python</a></li>
+	  <li><a href="#vue" tabindex="-1" data-toggle="tab">vue.js</a></li>
+	</ul>
+  </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade in active" id="c">
+	<p>
+	  C 语言是一种通用的、面向过程式的计算机程序设计语言。1972年,为了移植与开发 UNIX 操作系统，丹尼斯·里奇在贝尔电话实验室设计开发了C语言。
+	  C 语言是一种广泛使用的计算机语言，它与 Java 编程语言一样普及，二者在现代软件程序员之间都得到广泛使用。
+	  当前最新的 C 语言标准为 C18 ，在它之前的 C 语言标准有 C17、C11...C99 等。
+	</p>
+  </div>
+  <div class="tab-pane fade" id="java">
+	<p>
+	  Java 是由 Sun Microsystems 公司于 1995 年 5 月推出的高级程序设计语言。
+	  Java 可运行于多个平台，如 Windows, Mac OS 及其他多种 UNIX 版本的系统。
+	  移动操作系统 Android 大部分的代码采用 Java 编程语言编程。
+	</p>
+  </div>
+  <div class="tab-pane fade" id="python">
+	<p>
+	  Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。
+	  Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字。
+	  其他语言的一些标点符号，它具有比其他语言更有特色语法结构。
+	</p>
+  </div>
+  <div class="tab-pane fade" id="vue">
+	<p>
+	  vue是一套用于构建用户界面的渐进式框架。
+	  与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。
+	  Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。
+	  另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。
+	</p>
+  </div>
+</div>
+<!-- 导入jQuery文件Bootstrap的所有JavaScript插件都依赖 jQuery，所以必须放在前边 -->
+<script src="../static/js/jquery/2.0.0/jquery.min.js"></script>
+<!--在Bootstrap4中很多的提示/弹窗都是通过popper.min.js实现的, 所以需要导入-->
+<script src="../static/js/bootstrap/3.3.6/npm.js"></script>
+<!-- 加载 Bootstrap的所有 JavaScript插件-->
+<script src="../static/js/bootstrap/3.3.6/bootstrap.js"></script>
+</body>
+</html>

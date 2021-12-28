@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>判断对象属性</title>
+</head>
+<body>
+	<script type="text/javascript">
+	  class Person{
+	    name = null;
+	    age = 0;
+	    height = 1.80;
+	  }
+
+	  // 1.创建对象obj
+	  let obj = new Person();
+      // in的特点: 只要类中或者原型对象中有, 就会返回true
+      console.log("name" in obj);	// true
+      console.log("width" in obj);	// false
+      console.log("height" in obj);	// true
+
+      // hasOwnProperty:判断某一个对象自身是否拥有某一个属性
+      // 特点: 只会去类中查找有没有, 不会去原型对象中查找
+      console.log(obj.hasOwnProperty("name")); // true
+      console.log(obj.hasOwnProperty("score")); // false
+	</script>
+</body>
+</html>

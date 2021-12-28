@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>移出事件</title>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+	  off(type, callback): 移出事件
+  	*/
+    $(function (){
+      function func1(){
+        alert("hello jquery1");
+	  }
+      function func2(){
+        alert("hello jquery2");
+      }
+      function func3(){
+        alert("hello mouseenter");
+      }
+      // 绑定事件
+	  $("button").on("click", func1);
+	  $("button").on("click", func2);
+	  $("button").on("mouseenter", func3);
+
+	  // 不传参, 会移除所有事件
+	  // $("button").off();
+	  // 2. 传递一个参数,会移除对应类型所有事件
+	  // $("button").off("click");
+
+	  // 3.传递两个参数.会移除对应类型对应事件
+	  $("button").off("click", func1);
+    });
+
+  </script>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>点击事件</title>
+</head>
+<body>
+userName:<input type="text" id="t1"> <br/><br/>
+userName:<input type="text" id="t2"> <br/><br/>
+<input type="button" value="单击复制/双击清除" id="btn">
+<script type="text/javascript">
+  //单击事件
+  document.querySelector("#btn").onclick = function () {
+    document.querySelector("#t2").value = document.querySelector("#t1").value;
+  }
+
+  //双击事件
+  document.getElementById("btn").ondblclick = function () {
+    /*清空为0*/
+    document.getElementById("t1").value = "";
+    document.getElementById("t2").value = "";
+  }
+</script>
+</body>
+</html>

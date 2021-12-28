@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>边框属性</title>
+  <style type="text/css">
+	.box1{
+		width: 150px;
+		height: 150px;
+		background-color: green;
+
+        /*border: 5px solid blue;*/
+        /*border: 5px solid;*/
+     	 /* border: 5px blue;*/
+
+		border-top: 15px solid blue;
+		border-right: 15px dashed red;
+        border-bottom: 15px dotted purple;
+		border-left: 15px double pink;
+	}
+
+	.box2{
+        width: 150px;
+        height: 150px;
+        background-color: red;
+
+		/*连写*/
+		/*
+		  border-width: 15px 15px 15px 15px;
+		  border-style: solid dashed dotted double;
+		  border-color: blue green purple pink;
+		*/
+
+        border-top-width: 5px;
+        border-top-style: solid;
+        border-top-color: blue;
+
+        border-right-width: 10px;
+        border-right-style: dashed;
+        border-right-color: green;
+
+        border-bottom-width: 15px;
+        border-bottom-style: dotted;
+        border-bottom-color: purple;
+
+        border-left-width: 20px;
+        border-left-style: double;
+        border-left-color: pink;
+	}
+  </style>
+</head>
+<body>
+	<div class="box1"></div><br/>
+	<div class="box2"></div>
+</body>
+</html>

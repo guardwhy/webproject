@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hasClass属性</title>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+	hasClass(): 判断元素中是否包含指定类
+	*/
+
+	$(function (){
+      // 1.传递参数, 只要调用者其中一个包含指定类就返回true,否则返回false
+	  console.log($("div").hasClass("kobe"));	// true
+	  console.log($("div").hasClass("james"));	// false
+	  //2.没有传递参数,返回false
+	  console.log($("div").hasClass());	// false
+	});
+
+  </script>
+</head>
+<body>
+<div class="guardwhy kobe Curry"></div>
+<div class="abc cc"></div>
+</body>
+</html>

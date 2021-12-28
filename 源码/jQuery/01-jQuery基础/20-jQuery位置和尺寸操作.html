@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery位置和尺寸操作</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.father{
+		width: 150px;
+		height: 150px;
+		background: green;
+        border: 30px solid #000;
+		margin-left: 50px;
+		position: relative;
+	}
+	.son{
+		width: 100px;
+		height: 100px;
+		background: blueviolet;
+		position: absolute;
+		left: 50px;
+		top: 50px;
+	}
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<div class="father">
+  <div class="son"></div>
+</div>
+<button>获取</button>
+<button>设置</button>
+<script type="text/javascript">
+  $(function (){
+	// 1.拿到button
+	let btns = document.getElementsByTagName("button");
+	// 2.监听获取
+	btns[0].onclick = function (){
+	  // 2.1 获取元素的宽度
+	  console.log("元素宽度:" + $(".father").width());
+	  // 2.2 offset：获取元素距离窗口的偏移位
+	  console.log("元素距离窗口的偏移位:" + $(".son").offset().left);
+	  // 2.3 position：获取元素距离定位元素的偏移位
+	  console.log("元素距离定位元素的偏移位:" + $(".son").position().left);
+	}
+	// 3.监听设置
+	btns[1].onclick = function (){
+	  // 3.1 设置元素的宽度
+	  $(".father").width("500px");
+	  // 3.2 元素距离窗口的偏移位
+	  $(".son").offset({
+		left:10
+	  });
+	  // 3.3 position方法只能获取不能设置,只能通过CSS设置
+	  $(".son").css({
+		left: "10px"
+	  });
+	}
+  });
+</script>
+</body>
+</html>

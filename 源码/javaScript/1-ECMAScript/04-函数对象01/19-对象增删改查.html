@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>对象增删改查</title>
+  <script type="text/javascript">
+	// 创建Person类
+	class Person{}
+	// 创建obj对象
+	let obj = new Person();
+	console.log("======添加操作======");
+	// 1.添加属性
+	obj["name"] = "guardwhy";
+    obj["age"] = "18";
+	// 2.添加方法
+	obj["say"] = function (){
+      console.log("hello world");
+    }
+    obj.say();
+	console.log(obj);
+
+    console.log("======修改操作======");
+    // 3.修改属性
+    obj["name"] = "curry";
+    obj["age"] = "10";
+    // 4.修改方法
+	obj["say"] = function (){
+	  console.log("hello javaScript!!!");
+	}
+	obj.say();
+	console.log(obj);
+
+    console.log("======查询操作======");
+    console.log(obj["name"]);
+
+
+    console.log("======删除操作======");
+    // .删除属性
+	delete obj["name"];
+	// 4.删除方法
+	delete obj["say"];
+    console.log(obj);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

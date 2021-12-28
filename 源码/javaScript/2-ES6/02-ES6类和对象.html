@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES6类和对象</title>
+</head>
+<body>
+	<script type="text/javascript">
+      /*
+		从ES6开始系统提供了一个名称叫做class的关键字, 这个关键字就是专门用于定义类的
+	  */
+	  class Person{
+		  // 通过new创建对象的时候,系统会自动调用constructor
+		  // constructor称之为构造函数
+		  constructor(myName, myAge){
+			  this.name = myName;
+			  this.age = myAge;
+		  }
+		  // 实例属性
+		  name = "guardwhy";
+		   age = 21;
+		  // 实例方法
+        message(){
+          	console.log("实例方法被调用!!!!")
+            console.log("姓名:"+ this.name + ",年龄:"+ this.age);
+		  }
+		  // 静态属性
+		  static num = 6;
+		  // 静态方法
+		  static run() {
+            console.log("静态方法被执行！！！");
+		  }
+	  }
+	  // 实例化对象
+	  let obj = new Person();
+	  // 对象调用实例方法
+	  obj.message();
+	  console.log("++++++++++++++");
+	  // 构造方法调用静态属性和静态方法
+	  console.log("静态属性被调用！！！")
+	  console.log(Person.num);
+      console.log("++++++++++++++");
+      // 构造方法调用静态方法
+	  Person.run();
+	</script>
+</body>
+</html>

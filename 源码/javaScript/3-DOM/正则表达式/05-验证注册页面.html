@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>验证注册页面</title>
+  <style type="text/css">
+      body {
+          margin: 0;
+          padding: 0;
+          font-size: 12px;
+          line-height: 20px;
+      }
+
+      .main {
+          width: 525px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .hr_1 {
+          font-size: 14px;
+          font-weight: bold;
+          color: #3275c3;
+          height: 35px;
+          border-bottom-width: 2px;
+          border-bottom-style: solid;
+          border-bottom-color: #3275c3;
+          vertical-align: bottom;
+          padding-left: 12px;
+      }
+
+      .left {
+          text-align: right;
+          width: 80px;
+          height: 25px;
+          padding-right: 5px;
+      }
+
+      .center {
+          width: 280px;
+      }
+
+      .in {
+          width: 130px;
+          height: 16px;
+          border: solid 1px #79abea;
+      }
+
+      .red {
+          color: #cc0000;
+          font-weight: bold;
+      }
+
+      div {
+          color: #F00;
+      }
+  </style>
+  <script type="text/javascript">
+    //验证所有的方法
+    function checkAll() {
+      return checkUser() && checkMobile();
+    }
+
+    /*
+	验证用户名：只能由英文字母和数字组成，长度为4～16个字符，并且以英文字母开头
+	 */
+    function checkUser() {
+      //1.创建正则表达式
+      var reg = /^[a-zA-Z][a-zA-Z0-9]{3,15}$/;
+
+      //2.得到文本框中值
+      var value = document.getElementById("user").value;
+
+      var info = document.getElementById("userInfo");  //得到后面的span对象
+      //3.如果验证通过返回true，并且在后面打勾
+      if (reg.test(value)) {
+        info.innerHTML = "<img src='img/gou.png' width='15'>";
+        return true;
+      }
+      //4.验证不通过返回false，并且在后面显示错误信息
+      else {
+        info.innerHTML = "用户名格式不正确";
+        return false;
+      }
+    }
+
+    /*
+	验证手机号
+	 */
+    function checkMobile() {
+      //1.创建正则表达式
+      var reg = /^1[3456789]\d{9}$/;
+
+      //2.得到文本框中值
+      var value = document.getElementById("mobile").value;
+
+      var info = document.getElementById("mobileInfo");  //得到后面的span对象
+      //3.如果验证通过返回true，并且在后面打勾
+      if (reg.test(value)) {
+        info.innerHTML = "<img src='img/gou.png' width='15'>";
+        return true;
+      }
+      //4.验证不通过返回false，并且在后面显示错误信息
+      else {
+        info.innerHTML = "手机号格式错误";
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+<form action="server" method="post" id="myform" onsubmit="return checkAll()">
+  <table class="main" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	  <td><img src="../images/logo.jpg" alt="logo"/><img src="../images/banner.jpg" alt="banner"/></td>
+	</tr>
+	<tr>
+	  <td class="hr_1">新用户注册</td>
+	</tr>
+	<tr>
+	  <td style="height:10px;"></td>
+	</tr>
+	<tr>
+	  <td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		  <tr>
+			<!-- 不能为空， 输入长度必须介于 5 和 10 之间 -->
+			<td class="left">用户名：</td>
+			<td class="center">
+			  <!--文本框失去焦点调用-->
+			  <input id="user" name="user" type="text" class="in" onblur="checkUser()"/>
+			  <span id="userInfo" style="color: red"></span>
+			</td>
+		  </tr>
+		  <tr>
+			<!-- 不能为空， 输入长度大于6个字符 -->
+			<td class="left">密码：</td>
+			<td class="center">
+			  <input id="pwd" name="pwd" type="password" class="in"/>
+			</td>
+		  </tr>
+		  <tr>
+			<!-- 不能为空， 与密码相同 -->
+			<td class="left">确认密码：</td>
+			<td class="center">
+			  <input id="repwd" name="repwd" type="password" class="in"/>
+			</td>
+		  </tr>
+		  <tr>
+			<!-- 不能为空， 邮箱格式要正确 -->
+			<td class="left">电子邮箱：</td>
+			<td class="center">
+			  <input id="email" name="email" type="text" class="in"/>
+			</td>
+		  </tr>
+		  <tr>
+			<!-- 不能为空， 使用正则表达式自定义校验规则,1开头，11位全是数字 -->
+			<td class="left">手机号码：</td>
+			<td class="center">
+			  <input id="mobile" name="mobile" type="text" class="in" onblur="checkMobile()"/>
+			  <span id="mobileInfo" style="color: red"></span>
+			</td>
+		  </tr>
+		  <tr>
+			<!-- 不能为空， 要正确的日期格式 -->
+			<td class="left">生日：</td>
+			<td class="center">
+			  <input id="birth" name="birth" type="text" class="in"/>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="left">&nbsp;</td>
+			<td class="center">
+			  <input name="" type="image" src="../images/register.jpg"/>
+			</td>
+		  </tr>
+		</table>
+	  </td>
+	</tr>
+  </table>
+</form>
+</body>
+</html>

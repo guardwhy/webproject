@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自动轮播</title>
+  <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      .box{
+          width: 670px;
+          height: 300px;
+          border: 1px solid #000;
+          margin: 100px auto;
+          position: relative;
+          overflow: hidden;
+      }
+      ul{
+          list-style: none;
+          display: flex;
+      }
+      p{
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+      }
+      p>span{
+          width: 30px;
+          height: 60px;
+          line-height: 60px;
+          text-align: center;
+          background: rgba(0,0,0,0.5);
+          color: #ffffff;
+          font-size: 40px;
+      }
+  </style>
+  <!--导入js-->
+  <script src = "js/animation01.js"></script>
+</head>
+<body>
+<div class="box">
+  <ul>
+	<li><img src="../images/ad1.jpg" alt=""></li>
+	<li><img src="../images/ad2.jpg" alt=""></li>
+	<li><img src="../images/ad3.jpg" alt=""></li>
+	<li><img src="../images/ad1.jpg" alt=""></li>
+  </ul>
+  <p>
+	<span class="left">&lt;</span>
+	<span class="right">&gt;</span>
+  </p>
+</div>
+<script type="text/javascript">
+  window.onload = function (){
+    // 1.拿到需要的div元素
+	let oBox = document.querySelector(".box");
+    let oLeft = document.querySelector(".left");
+    let oRight = document.querySelector(".right");
+    let oUI = document.querySelector("ul");
+    let oItems = document.querySelectorAll("ul>li");
+    let imgWidth = parseFloat(getComputedStyle(oItems[0]).width);
+    // 定义索引值
+    let currentIndex = 0;
+
+    // 1.监听按钮的点击
+    oRight.onclick = function (){
+      currentIndex++;
+      // 条件判断
+      if(currentIndex > oItems.length - 1){
+        currentIndex = 0;
+        // 快速的跳到第一张
+        oUI.style.marginLeft = -currentIndex * imgWidth + "px";
+        currentIndex++;
+      }
+      easeAnimation(oUI, -currentIndex * imgWidth);
+    }
+
+    oLeft.onclick = function (){
+      currentIndex--;
+      // 条件判断
+      if(currentIndex < 0){
+        currentIndex = oItems.length - 1;
+        // 快速跳转到最后一张
+        oUI.style.marginLeft = -currentIndex * imgWidth + "px";
+        currentIndex--;
+      }
+      easeAnimation(oUI, -currentIndex * imgWidth);
+    }
+    // 3.自动轮播
+	let id = setInterval(function (){
+	  oRight.onclick();
+	}, 2000);
+
+    oBox.onmouseenter = function (){
+      // 关闭定时器
+	  clearInterval(id);
+	};
+    oBox.onmouseleave = function (){
+      // 重新开启定时器
+	  id = setInterval(function (){
+	    oRight.onclick();
+	  },2000);
+	};
+  }
+</script>
+</body>
+</html>

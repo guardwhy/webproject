@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>注册事件</title>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+    /*
+	  1.1on(type, callback): 注册事件。
+	  1.2注册多个相同类型事件, 后注册的不会覆盖先注册的。
+      1.3注册多个不同类型事件, 后注册的不会覆盖先注册的。
+  	*/
+    $(function (){
+      $("button").on("click", function (){
+        alert("hello click1!!!");
+	  });
+      $("button").on("click", function (){
+        alert("hello click2!!!");
+      });
+
+      $("button").on("mouseenter", function (){
+        alert("hello mouseenter!!!");
+	  });
+      $("button").on("mouseleave", function (){
+        alert("hello mouseleave!!!");
+      });
+    });
+
+  </script>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+</body>
+</html>

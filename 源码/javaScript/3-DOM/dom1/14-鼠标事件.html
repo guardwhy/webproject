@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>鼠标事件</title>
+</head>
+<body>
+<input type="button" onmousedown="down()" onmouseup="up()" value="按下和弹起" ><br/><br/>
+
+<input type="button" onmousemove="move()"  value="鼠标经过" ><br/><br/>
+
+<input type="button" onmouseover="over()" value="鼠标进入"><br/><br/>
+
+<input type="button" onmouseout="out()" value="鼠标退出" ><br/><br/>
+
+<div id="message"></div>
+
+<script type="text/javascript">
+  // 定义number变量
+  let num = 0;
+  /*鼠标按下调用函数*/
+  function down(){
+    document.querySelector("#message").innerHTML="按下了鼠标";
+  }
+  /*鼠标谈起调用函数*/
+  function up(){
+    document.querySelector("#message").innerHTML="弹起了鼠标";
+  }
+  /*鼠标经过次数调用函数*/
+  function move(){
+    document.querySelector("#message").innerHTML="鼠标经过次数:"+(++num);
+  }
+  /*鼠标进入次数调用函数*/
+  function over(){
+    document.querySelector("#message").innerHTML="鼠标进入次数:"+(++num);
+  }
+  /*鼠标退出调用函数*/
+  function out(){
+    document.querySelector("#message").innerHTML="鼠标退出";
+    num = 0;
+  }
+</script>
+</body>
+</html>

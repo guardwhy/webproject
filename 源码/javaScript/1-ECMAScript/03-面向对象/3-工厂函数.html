@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>工厂函数</title>
+  <script type="text/javascript">
+	function Person(Name, Age){
+	  // 创建对象
+	  let obj = new Object();
+	  obj.name = Name;
+	  obj.age = Age;
+	  obj.say = function (){
+	    console.log("hello javaScript");
+	  }
+	  return obj;
+	}
+
+	// 创建对象
+	let obj1 = new Person("curry", 10);
+	let obj2 = new Person("kobe", 21);
+	// 输出对象
+	console.log(obj1);
+	console.log(obj2);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

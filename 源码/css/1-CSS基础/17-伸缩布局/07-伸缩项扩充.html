@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>伸缩项扩充</title>
+  <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      ul{
+          list-style: none;
+          width: 600px;
+          height: 600px;
+          border: 1px solid #000;
+          display: flex;
+          flex-direction: column;
+      }
+      ul>li{
+          width: 100px;
+          height: 100px;
+          line-height: 100px;
+          text-align: center;
+          font-size: 30px;
+          background: red;
+      }
+      ul>li:nth-child(1){
+         /* flex-grow缩小的公式
+          1.利用伸缩容器宽度 - 所有伸缩项的宽度 = 剩余空间
+         	 600 - 300 = 300
+          2.利用剩余空间 / 所有需要扩充份数的总和 = 每一份的大小
+          	300 / (1 + 4 + 8) = 23.07
+		  3.利用当前伸缩项的宽度 + 需要的份数的宽度
+			第一个伸缩项 = 100 + (1 * 23.07) = 123.07
+			第二个伸缩项 = 100 + (4 * 23.07) = 192.28
+			第三个伸缩项 = 100 + (8 * 23.07) = 284.56
+		*/
+          flex-grow: 1;
+      }
+      ul>li:nth-child(2){
+          background: cyan;
+          flex-grow: 4;
+      }
+      ul>li:nth-child(3){
+          background: rebeccapurple;
+          flex-grow: 8;
+      }
+  </style>
+</head>
+<body>
+  <ul>
+	<li>java</li>
+	<li>python</li>
+	<li>html</li>
+  </ul>
+</body>
+</html>

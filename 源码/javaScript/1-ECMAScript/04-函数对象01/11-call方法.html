@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>call方法</title>
+  <script type="text/javascript">
+    let obj = {
+      name: 'guardwhy'
+    }
+
+    function func(a, b) {
+      console.log(this);
+      console.log("a+b=" + a + b);
+    }
+
+    // call 第一个可以调用函数 第二个可以改变函数内的this指向
+    func.call(obj, 1, 2);
+
+
+    function Father(myName, myAge, mySex) {
+      this.name = myName;
+      this.age = myAge;
+      this.sex = mySex;
+    }
+
+    function Son(myName, myAge, mySex) {
+      // call 的主要作用可以实现继承
+      Father.call(this, myName, myAge, mySex);
+    }
+    let son = new Son('小明', 18, '男');
+    console.log(son);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

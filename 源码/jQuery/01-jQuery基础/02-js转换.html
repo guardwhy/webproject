@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS对象与JQ对象转换</title>
+  <script src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+<h2>JS对象与JQ对象的转换</h2>
+<input type="text" id="name" value="我太难了">
+<input type="button" id="b1" value="JS得到值">
+<input type="button" id="b2" value="JQ得到值">
+<script type="text/javascript">
+  //JS对象的方法
+  document.getElementById("b1").onclick = function () {
+    //文本框对象，是JS对象
+    let name = document.getElementById("name");
+    //JS->JQ对象
+    let jq = $(name);
+    //得到文本框的值
+    //var value = name.value;
+    //调用jq对象的方法
+    let value = jq.val();
+    //显示出来
+	console.log("js-jquery:" + value);
+  }
+
+  //JQ对象的方法，方法参数就是事件处理函数
+  $("#b2").click(function () {
+    //1.文本框对象，JQ对象
+    let name = $("#name");
+
+    //jQ-> JS对象
+    //var js = name[0];
+
+    let js = name.get(0);
+    let val = js.value;
+
+    //2.得到文本框中值，调用jq对象的方法，得到值
+    //var val = company.val();
+
+    //3.显示出来
+    console.log("jquery-js:" + val);
+  });
+</script>
+</body>
+</html>

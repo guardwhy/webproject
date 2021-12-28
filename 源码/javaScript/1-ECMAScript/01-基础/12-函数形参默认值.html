@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>函数形参默认值</title>
+  <script type="text/javascript">
+	// 1.在ES6之前可以通过逻辑运算符来给形参指定默认值
+	function getFun(a,b){
+	  /*
+	  	格式: 条件A || 条件B
+	  	如果条件A成立, 那么就返回条件A
+	  	如果条件A不成立, 无论条件B是否成立, 都会返回条件B
+	  */
+      a = a || "abc";
+      b = b || "James";
+      console.log("a的值:" + a, "b的值:" + b);
+	}
+	// 调用函数
+	getFun(123, "guardwhy");
+
+	// 2. 从ES6开始, 可以直接在形参后面通过=指定默认值
+	function getFun2(a="guardwhy", b=getDefault()){
+	  console.log("a的值:"+ a, "b的值:"+b);
+	}
+	// 调用函数
+	getFun2();
+	function getDefault(){
+	  return "456"
+	}
+  </script>
+</head>
+<body>
+
+</body>
+</html>

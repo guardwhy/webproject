@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mustache语法</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <h3>{{message}}</h3>
+      <!--mustache语法中,不仅仅可以直接写变量,也可以写简单的表达式-->
+      <h3>{{firstName + ' ' + lastName}}</h3>
+      <h3>{{counter * 2}}</h3>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          message: 'hello world!',
+          firstName: 'kobe',
+          lastName: 'bryant',
+          counter: '22'
+        }
+      })
+  </script>
+</body>
+</html>

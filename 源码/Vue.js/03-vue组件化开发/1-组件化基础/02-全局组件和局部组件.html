@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>全局组件和局部组件</title>
+</head>
+<body>
+    <div id="app">
+	  <!--3.使用组件-->
+      <cpn></cpn>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+      // 1.创建组件构造器
+      const cpnC = Vue.extend({
+        template: `
+          <div>
+            <h3>keep moving</h3>
+            <p>我的Harden,我是mvp</p>
+          </div>
+        `
+      });
+
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+		data:{
+          message: 'hello Vue.js!!!'
+		},
+        // 注册局部组件
+        components: {
+          // 使用组件时候的标签名(cpn),组件构造器(cpnC)
+          cpn: cpnC
+        }
+      })
+  </script>
+</body>
+</html>

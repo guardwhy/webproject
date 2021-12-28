@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>正则表达式的创建</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 1.创建方式1
+  // let reg = new RegExp("^\\d{3}$");
+  // 2. boolean test(字符串)，如果匹配返回true
+  /*
+  let str = reg.test("123");
+  document.write(str + "<br/>");
+  */
+
+  // 2.方式二
+  let reg = /^\d{3}$/;
+  // 2.1 使用test方法判断是否匹配
+  let str = reg.test("123");
+  document.write(str + "<br/>");
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>循环索引同步</title>
+</head>
+<body>
+<script type="text/javascript">
+  /*
+   默认情况下是顺序结构, 代码会从上之下的执行, 前面的没执行完后面的不能执行
+   默认情况下通过var定义的变量, 只要不是定义在函数中都是全局变量
+   */
+  console.log("====形式1====");
+  for(var i=0; i<3; i++){	// 0,1,2,3
+    function test1(){
+      console.log(i); // 3
+	}
+  }
+  console.log(i);	// 3
+  // 调用函数
+  test1();
+
+  console.log("====形式2====");
+  for(var i=0; i<3; i++){
+    function test2(){
+      console.log(i);
+	}
+	// 调用函数
+	test2();
+  }
+
+  console.log("====形式3====");
+  for(var i=0; i<3; i++){
+	(function test3(){
+	  console.log(i);	// 0,1,2
+	})();
+  }
+
+  console.log("====形式4====");
+  for (var i=0; i<3; i++){
+    function test4(index){
+      console.log(index);
+	}
+	test4(i);
+	(function test4(index){
+	  console.log(index)
+	})(i);
+  }
+</script>
+</body>
+</html>

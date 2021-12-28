@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>提取字符串</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 1.定义字符串
+  let str = "abc2020-1-11def2019-11-11fdjsklf";
+  // 2.默认情况下在正则表达式中一旦匹配就会停止查找 /g表示查到最后
+  let reg = /\d{4}-\d{1,2}-\d{1,2}/g
+  let res = str.match(reg);
+  // 输出结果
+  console.log(res);
+  console.log(res[0]);
+  console.log(res[1]);
+</script>
+</body>
+</html>

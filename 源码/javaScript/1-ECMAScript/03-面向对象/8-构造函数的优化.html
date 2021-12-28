@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>构造函数的优化</title>
+  <script type="text/javascript">
+    function Person (uName, uAge) {
+      this.name = uName
+      this.age = uAge
+    }
+
+    Person.prototype = {
+      sayHello: function (){
+        console.log('hello ' + this.name)
+	  }
+	}
+
+    let p1 = new Person('curry', 10)
+    let p2 = new Person('james', 16)
+    console.log(p1.sayHello === p2.sayHello) // => true
+  </script>
+</head>
+<body>
+
+</body>
+</html>

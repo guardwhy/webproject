@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>创建默认对象</title>
+  <script type="text/javascript">
+    /*
+    1.JavaScript中提供了一个默认的类Object, 可以通过这个类来创建对象
+    2.由于是使用系统默认的类创建的对象, 所以系统不知道想要什么属性和行为, 所以必须手动的添加想要的属性和行为
+    3.如何给一个对象添加属性
+    对象名称.属性名称 = 值;
+    4.如何给一个对象添加行为
+    对象名称.行为名称 = 函数;
+    */
+
+	// 1.创建对象(方式一)
+	let obj1 = new Object();
+	obj1.name = "guardwhy";
+	obj1.age = 21;
+	obj1.func1 = function (){
+	  console.log("属性:" + "javaScript最牛逼");
+	}
+	// 输出属性
+	console.log("姓名:"+ obj1.name);
+	console.log("年龄:" + obj1.age);
+	// 调用方法
+	obj1.func1();
+
+	console.log("++++++++++++++++++++");
+
+	// 2.创建对象(方式2)
+    let obj2 = {};
+    obj2.name = "guardwhy";
+    obj2.age = 21;
+    obj2.func2 = function (){
+      console.log("属性:" + "javaScript最牛逼");
+    }
+    // 输出属性
+    console.log("姓名:"+ obj2.name);
+    console.log("年龄:" + obj2.age);
+    // 调用方法
+    obj2.func2();
+
+    console.log("=======================");
+
+    // 3.创建对象(方式3)
+    // 注意点: 属性名称和取值之间用冒号隔开, 属性和属性之间用逗号隔开
+	let obj3 = {
+	  name:"guardwhy",
+	  age: 21,
+	  func3: function (){
+        console.log("属性:" + "javaScript最牛逼");
+	  }
+	};
+    // 输出属性
+    console.log("姓名:"+ obj3.name);
+    console.log("年龄:" + obj3.age);
+    // 调用方法
+    obj3.func3();
+  </script>
+</head>
+<body>
+
+</body>
+</html>

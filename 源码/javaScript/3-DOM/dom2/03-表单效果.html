@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>表单效果</title>
+</head>
+<body>
+<form action="https://www.imooc.com/">
+  <input type="text" placeholder="请输入搜索关键字" name="text">
+  <input type="submit" value="搜索">
+</form>
+<script type="text/javascript">
+  let oText = document.querySelector("input[type=text]");
+  let oSubmit = document.querySelector("input[type=submit]");
+  // 在JS中如果HTML标签的属性名称和取值名称一样的时候, 那么JS会返回true/false
+  oSubmit.disabled = true;
+
+  oText.oninput = function (){
+    oSubmit.disabled = this.value.length === 0;
+  }
+</script>
+</body>
+</html>

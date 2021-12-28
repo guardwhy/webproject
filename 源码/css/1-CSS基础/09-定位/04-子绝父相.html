@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>子绝父相</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul{
+		list-style: none;
+		width: 800px;
+		height: 50px;
+		margin: 0 auto;
+		margin-top: 100px;
+		background-color: red;
+	}
+	ul li{
+		float: left;
+		width: 150px;
+		line-height: 50px;
+		text-align: center;
+		background-color: #ccc;
+	}
+	ul li:nth-of-type(4){
+		background-color: yellow;
+		position: relative;
+	}
+	ul li img{
+		/*子绝父相:子元素用绝对定位,父元素用相对定位*/
+		position: absolute;
+		left: 50%;
+		margin-left: -12px;
+		top: -10px;
+	}
+  </style>
+</head>
+<body>
+  <ul>
+	<li>html</li>
+	<li>CSS</li>
+	<li>javaScript</li>
+	<li>Java
+	  <img src="images/hot.png" alt="">
+	</li>
+	<li>python</li>
+	<li>cpp</li>
+	<li>Vue</li>
+	<li>Go</li>
+  </ul>
+</body>
+</html>

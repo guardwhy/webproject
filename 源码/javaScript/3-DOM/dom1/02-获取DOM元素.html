@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获取DOM元素</title>
+</head>
+<body>
+<!--
+	1.在JavaScript中HTML标签也称之为DOM元素。
+	2.使用document的时候前面不用加window。
+-->
+<div class="father">
+  <form>
+	<input type="text" name="test">
+	<input type="password" name="test">
+  </form>
+
+  <div class="father" id="box">这是一个div</div>
+
+  <script type="text/javascript">
+    /*
+	1.通过id获取指定元素
+	由于id不可以重复, 所以找到了就会将找到的标签包装成一个对象返回给我们, 找不到就返回Null
+	注意点: DOM操作返回的是一个对象, 这个对象是宿主类型对象(浏览器提供的对象)
+	*/
+	console.log("====通过id获取指定元素====");
+	let div1 = document.getElementById("box");
+	// 输出结果
+	console.log(div1);
+	console.log(typeof div1);	// obj类型
+
+    /*
+	2.通过class名称获取
+	由于class可以重复, 所以找到了就返回一个存储了标签对象的数组, 找不到就返回一个空数组
+	*/
+    console.log("====通过class名称获取====");
+	let div2 = document.getElementsByClassName("father");
+	console.log(div2);
+
+    /*
+	 3.通过name名称获取
+	 由于name可以重复, 所以找到了就返回一个存储了标签对象的数组, 找不到就返回一个空数组。
+   */
+	console.log("++++通过name名称获取++++");
+	let div3 = document.getElementsByName("test");
+	console.log(div3);
+
+    /*
+   4.通过标签名称获取
+   由于标签名称可以重复, 所以找到了就返回一个存储了标签对象的数组, 找不到就返回一个空数组
+   */
+    console.log("++++通过标签名称获取++++");
+    let div4 = document.getElementsByTagName("div");
+    console.log(div4);
+
+    /*
+    5.通过选择器获取
+    querySelector只会返回根据指定选择器找到的第一个元素
+    */
+	console.log("====通过选择器获取====");
+	let div5 = document.querySelector("#box");
+    console.log(div5);
+
+    let div6 = document.querySelector(".father");
+    console.log(div6);
+
+    let div7 = document.querySelector("div>form");
+    console.log(div7);
+
+    /*
+    6.通过选择器获取
+    querySelectorAll会返回指定选择器找到的所有元素
+    */
+	console.log("====返回指定选择器找到的所有元素====");
+	let elements = document.querySelectorAll(".father");
+	console.log(elements);
+  </script>
+</div>
+</body>
+</html>

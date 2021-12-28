@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>楼层效果</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	html,body{
+		width: 100%;
+		height: 100%;
+	}
+	ul{
+		width: 100%;
+		height: 100%;
+	}
+	ul>li{
+		list-style: none;
+		width: 100%;
+		height: 100%;
+		font-size: 50px;
+		text-align: center;
+	}
+	ol{
+		position: fixed;
+		left: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	ol>li{
+        list-style: none;
+		width: 200px;
+		line-height: 50px;
+		text-align: center;
+        border: 1px solid #000;
+	}
+	.selected{
+		background: greenyellow;
+	}
+  </style>
+  <script src="js/animation02.js"></script>
+  <script src="js/tools.js"></script>
+</head>
+<body>
+<ul>
+  <li>车遥遥篇</li>
+  <li>题龙阳县青草湖</li>
+  <li>湖口望庐山瀑布泉</li>
+  <li>行香子·过七里濑</li>
+  <li>念奴娇·过洞庭</li>
+  <li>谢亭送别</li>
+</ul>
+<ol>
+  <li class="selected">愿我如星君如月，夜夜流光相皎洁。</li>
+  <li>醉后不知天在水，满船清梦压星河。</li>
+  <li>奔流下杂树，洒落出重云。</li>
+  <li>水天清、影湛波平。鱼翻藻鉴，鹭点烟汀。</li>
+  <li>洞庭青草，近中秋，更无一点风色。玉鉴琼田三万顷，着我扁舟一叶。</li>
+  <li>日暮酒醒人已远，满天风雨下西楼。</li>
+</ol>
+<script type="text/javascript">
+  // 1.初始化楼层的颜色
+  let oPages = document.querySelectorAll("ul>li");
+  let colorArr = ['green', 'blue', 'purple', 'red', 'yellow'];
+  // 2.遍历li
+  for(let i=0; i<oPages.length; i++){
+    let page = oPages[i];
+    page.style.background = colorArr[i];
+  }
+  // 3.点击谁就选中谁
+  let oItems = document.querySelectorAll("ol>li");
+  let currentItem = oItems[0];
+  // 4.获取可视区域的高度
+  let screenHeight = getScreen().height;
+  // 5.定义一个定时器
+  let timerId = null;
+  for(let i=0; i < oItems.length; i++){
+    let item = oItems[i];
+    // 点击事件
+    item.onclick = function (){
+      // 默认属性
+      currentItem.className = "";
+      this.className = "selected";
+      currentItem = this;
+
+      // 清空定时器
+	  clearInterval(timerId);
+	  timerId = setInterval(function (){
+	    // 开始
+		let begin = document.documentElement.scrollTop;
+		// 目标
+		let target = i * screenHeight;
+		// 步长
+		let step = (target - begin) * 0.2;
+		begin += step;
+		// 条件判断
+		if(Math.abs(Math.floor(step)) <= 1){
+		  // 清空定时器
+		  clearInterval(timerId);
+		  document.documentElement.scrollTop = i * screenHeight;
+		  return;
+		}
+		document.documentElement.scrollTop = begin;
+	  }, 50);
+	}
+  }
+</script>
+</body>
+</html>

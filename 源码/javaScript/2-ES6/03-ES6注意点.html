@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03-ES6注意点</title>
+</head>
+<body>
+<script type="text/javascript">
+  class Person1 {
+
+	  // 在ES6标准中添加实例属性都需要在constructor中添加
+	  constructor() {
+		// 实例属性
+		this.name = "guardwhy";
+		this.age = 21;
+	  }
+
+	  // 实例方法
+	  say() {
+		console.log("姓名:"+ this.name + ",年龄:"+ this.age);
+	  }
+	}
+	// 实例化obj1对象
+	let obj1 = new Person1();
+	console.log(obj1);
+	console.log("++++++++++++++");
+
+  class Person2 {
+
+	// 在ES标准中static只支持定义静态方法不支持定义静态变量
+	// static num = 666; 报错
+
+	// 静态方法
+	static run() {
+	  console.log("run");
+	}
+  }
+
+	// 静态属性
+	Person2.num = 666;
+  	// 实例化obj2对象
+	let obj2  = new Person2();
+	console.log(obj2);
+	console.log("++++++++++++++");
+
+  /*
+   注意点:
+   如果通过class定义类, 那么不能自定义这个类的原型对象
+   如果想将属性和方法保存到原型中, 只能动态给原型对象添加属性和方法
+   */
+  class Person3 {
+    constructor(myName, myAge) {
+      this.name = myName;
+      this.age = myAge;
+      this.message = function () {
+        console.log("hello javaScript!!!");
+      }
+    }
+  }
+
+	Person3.prototype.type = "json";
+	Person3.prototype.say = function () {
+	  console.log(this.name, this.age);
+	};
+	// 实例化obj3对象
+	let obj3 = new Person3("guardwhy", 21);
+	console.log(obj3);
+</script>
+</body>
+</html>

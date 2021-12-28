@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>字符串常用方法</title>
+  <script type="text/javascript">
+    // 1.获取字符串长度
+	let str1 = "guardwhy";
+	console.log("字符串长度:" + str1.length);
+	console.log("========");
+
+    // 2.获取某个字符 [索引]
+	let str2 = "guardwhy";
+	// 获取字符
+	let ch = str2.charAt(1);
+	console.log("索引值:" + ch);
+	console.log("++++++++");
+
+    // 3.字符串查找 indexOf / lastIndexOf / includes
+	let str3 = "guardwuhy";
+	let index1 = str3.indexOf("u");
+	console.log("第一次出现位置:" + index1);
+    let index2 = str3.lastIndexOf("u");
+    console.log("最后一次出现位置:" + index2);
+    let result = str3.includes("a");
+    console.log("result:" + result);
+    console.log("++++++++");
+
+    // 4.字符串拼接
+	let str4 = "guard";
+	let str5 = "why";
+	let str6 = str4 + str5;
+	console.log("字符串拼接:" + str6);
+    console.log("========");
+
+    // 5.截取子串 slice / substring / substr
+	let str = "guardwhy";
+	let subStr1 = str.slice(1,3);
+	console.log("subStr方法:"+ subStr1);
+	let subStr2 = str.slice(1,3);
+    console.log("slice方法:"+ subStr2);
+    let subStr3 = str.substring(1,3);
+    console.log("substring方法:"+ subStr3);
+    console.log("========");
+
+    // 6.字符串模板 ES6
+	let name = "guardwhy";
+	let age = 10;
+	// 拼接
+	// let myStr = "我的名字是:" + name + ",我的年龄是:" + age;
+	let myStr = `我的名字是${name}, 我的年龄是${age}`;
+	console.log(myStr);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

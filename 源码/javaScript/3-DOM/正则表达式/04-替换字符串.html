@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>替换字符串</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 定义字符串str
+  let str = "abc2020-1-11def2019-11-11fdjsklf";
+  let reg = /\d{4}-\d{1,2}-\d{1,2}/g
+  let newStr = str.replace(reg, "guardwhy");
+  // 输出结果
+  console.log(str);
+  console.log(newStr);
+</script>
+</body>
+</html>

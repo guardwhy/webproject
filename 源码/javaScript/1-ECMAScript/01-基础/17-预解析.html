@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>预解析</title>
+  <script type="text/javascript">
+	/*
+	1.ES6之前定义函数的格式
+	*/
+	// 1.1 命名函数
+	func1();
+    // ES6之前的这种定义函数的格式, 是会被预解析的, 所以可以提前调用
+	function func1(){
+	  console.log("guardwhy is mvp!!!");
+	}
+
+    /*
+    // 预解析之后的代码
+    function func1(){
+      console.log("guardwhy is mvp!!!");
+    }
+
+    func1();
+    */
+
+	// 2.匿名函数
+	// func2();	// fun2 is not a function
+	// 如果将函数赋值给一个var定义的变量, 那么函数不会被预解析, 只有变量会被预解析
+	var func2 = function (){
+      console.log("kobe is mvp!!!");
+	}
+
+	/*
+	  var func2;	//undefined
+	  func2();
+	  func2 = function (){
+		console.log("kobe is mvp!!!");
+	  }
+	*/
+
+	// 3.ES6定义函数的格式
+	func3();	// func3 is not defined
+	let func3 = () =>{
+      console.log("james is mvp!!!");
+	}
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

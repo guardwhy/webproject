@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>深拷贝和浅拷贝</title>
+  <script type="text/javascript">
+
+	// 1.深拷贝
+	// 定义变量
+	let num1 = 123;
+	let num2 = num1;
+	// 修改形变量的值
+	num2 = 26;
+	// 输出结果
+	console.log("num1:" + num1);
+	console.log("num2:" + num2);
+
+	console.log("====深拷贝====");
+
+	// 2.浅拷贝
+	class Person{
+	  name="guardwhy";
+	  age = 26;
+	}
+	// 创建obj1对象
+	let obj1 = new Person();
+	let obj2 = obj1;
+	// 修改变量的值
+	obj2.name = "curry";
+	// 输出结果
+	console.log(obj1.name);
+	console.log(obj2.name);
+    console.log("====浅拷贝====");
+  </script>
+</head>
+<body>
+
+</body>
+</html>

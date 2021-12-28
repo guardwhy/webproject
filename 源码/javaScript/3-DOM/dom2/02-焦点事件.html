@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>焦点事件</title>
+</head>
+<body>
+<input type="text">
+<script type="text/javascript">
+  let oInput = document.querySelector("input");
+  // 1.监听input获取焦点
+  /*oInput.onfocus = function (){
+    console.log("获取到了焦点...");
+  }*/
+  // 2.监听input失去焦点
+  /*oInput.onblur = function (){
+    console.log("失去了焦点...");
+  }*/
+  // 3.监听input内容改变
+  /*oInput.onchange = function (){
+    console.log(this.value);
+  }*/
+  // 4.oninput事件可以时时获取到用户修改之后的数据, 只要用户修改了数据就会调用(执行)
+  oInput.oninput = function (){
+    console.log(this.value);
+  }
+</script>
+</body>
+</html>

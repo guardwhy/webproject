@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>apply方法</title>
+</head>
+<body>
+	<script type="text/javascript">
+      let obj = {
+        name: 'guardwhy'
+      };
+
+      function fn(array1) {
+        console.log(this);
+        console.log(array1); // 'pink'
+
+      }
+      fn.apply(obj, ['pink']);
+      // 1. 也是调用函数 第二个可以改变函数内部的this指向
+      // 2. 但是他的参数必须是数组(伪数组)
+      let array1 = [1, 66, 3, 99, 4];
+      let array2 = ['red', 'pink'];
+      // var max = Math.max.apply(null, arr);
+      let max = Math.max.apply(Math, array1);
+      let min = Math.min.apply(Math, array1);
+      console.log(max, min);
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算属性的复杂使用</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <h3>总价格:{{totalPrice}}</h3>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          books: [
+            {id: 100, name:'Unix编程艺术', price: 119},
+            {id: 111, name: '代码大全', price: 105},
+            {id: 112, name: '深入理解计算机原理', price: 98},
+            {id: 113, name: '现代操作系统', price: 87},
+          ]
+        },
+
+        computed: {
+          totalPrice: function () {
+            // 定义result值
+            let result = 0;
+            /*for(let i=0; i < this.books.length; i++){
+              result += this.books[i].price
+            }*/
+
+            // es6写法
+            for (let i in this.books) {
+                 result += this.books[i].price;
+               }
+
+            // 返回结果值
+            return result;
+          }
+        }
+      })
+  </script>
+</body>
+</html>

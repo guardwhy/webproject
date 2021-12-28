@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>递归函数</title>
+  <script type="text/javascript">
+	// 声明函数
+	function login(){
+	  // 1.接收用户输入密码
+	  let pwd = prompt("请输入密码");
+	  // 2.判断密码是否正确
+	  if(pwd != "guardwhy"){
+	    login();
+	  }
+	  alert("欢迎再次登录");
+	}
+
+	// 调用函数
+	login();
+  </script>
+</head>
+<body>
+
+</body>
+</html>

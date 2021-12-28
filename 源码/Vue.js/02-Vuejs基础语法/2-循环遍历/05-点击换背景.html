@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>点击换背景</title>
+  <style>
+    .active{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <!--遍历数组-->
+      <ul>
+        <li v-for="(item, index) in starts"
+            :class="{active: currentIndex == index}"
+            @click="liClick(index)">
+          {{index}}.{{item}}
+        </li>
+      </ul>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          starts: ['kobe', 'Jmaes', 'curry', 'Rando'],
+          // 设置点击索引值为0
+          currentIndex: 0
+        },
+
+        // 方法
+        methods: {
+          liClick(index){
+            this.currentIndex = index
+          }
+        }
+      })
+  </script>
+</body>
+</html>

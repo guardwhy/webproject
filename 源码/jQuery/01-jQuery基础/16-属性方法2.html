@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>属性方法2</title>
+  <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<span class="obj1" name = "Curry"></span>
+<span class="obj2" name = "James"></span>
+<input type="checkbox" checked>
+
+<script type="text/javascript">
+  $(function (){
+    /*
+	1.prop方法
+	特点和attr方法一致
+	2.removeProp方法
+	特点和removeAttr方法一致
+	*/
+	// 1.设置操作
+	/*$("span").eq(0).prop("NBA","kobe");
+	$("span").eq(1).prop("NBA", "Rondo");*/
+	// 打印属性
+	// console.log($("span").prop("NBA"));	// kobe
+
+	// 2.移除操作
+	/*$("span").removeProp("NBA");*/
+
+    /*
+	  注意点:
+	  prop方法不仅能够操作属性, 还能操作属性节点.
+	  checked,selected或者disabled使用prop(),其他的使用 attr()。
+	*/
+	console.log($("input").prop("checked"));	// true
+	console.log($("input").attr("checked")); 	//checked
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>05-转换为字符串类型</title>
+  <script type="text/javascript">
+	// 定义变量
+	let value = 123;
+	document.write("value的值：" + value + "<br/>");
+	document.write(typeof value + "<br/>");
+	document.write("+++++++++++++" +"<br/>");
+    // 将value变量中存储的数据拷贝一份, 然后将拷贝的数据转换为字符串之后返回.
+	let str = value.toString();
+	document.write("str的值:" + str + "<br/>");
+    document.write(typeof str + "<br/>");
+    document.write("+++++++++++++" +"<br/>");
+    // 不能使用常量直接调用toString方法, 因为常量是不能改变的.
+	// let st2 = 123.toString();
+
+	// String(常量or变量), 因为是根据传入的值重新生成一个新的值, 并不是修改原有的值
+	let st1 = 123;
+    document.write("st1的值：" + st1 + "<br/>");
+    let st2 = String(st1);
+    document.write("st2的值：" + st2 + "<br/>");
+    document.write(typeof st2 + "<br/>");
+    document.write("+++++++++++++" +"<br/>");
+
+    let str3 = 123;
+    let str4 = str3 + "";
+    document.write("str4的值：" + str4 + "<br/>");
+    document.write(typeof str4 + "<br/>");
+  </script>
+</head>
+<body>
+	<!--
+		在JavaScript中如果想将以上的四种基本数据类型转换为字符串类型, 常用的方法有三种
+        1.对于Number类型和Boolean类型来说, 可以通过 变量名称.toString()的方式来转换
+        2.可以通过String(常量or变量);转换为字符串
+        3.还可以通过 变量or常量 + "" / 变量or常量 + ''转换为字符串
+	-->
+</body>
+</html>

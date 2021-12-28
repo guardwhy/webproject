@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算属性的基本使用</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <h3>{{fullName}}</h3>
+
+      <h3>{{getFullName()}}</h3>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          firstName: 'Lebron',
+          lastName: 'James'
+        },
+
+        // 计算属性
+        computed: {
+          fullName: function () {
+            return this.firstName + ' ' + this.lastName
+          }
+        },
+
+        // 方法版
+        methods: {
+          getFullName(){
+            return this.firstName + ' ' + this.lastName
+          }
+        }
+      })
+  </script>
+</body>
+</html>

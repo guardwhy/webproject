@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-html指令</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <h3>{{message}}</h3>
+      <h3>{{url}}</h3>
+
+      <!--该指令后面往往会跟上一个string类型，会将string的html解析出来并且进行渲染-->
+      <h3 v-html="url"></h3>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          message: 'hello world!',
+          url: '<a href="https://www.bing.com">bing</a>'
+        }
+      })
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-if和v-else的使用</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <h3 v-if="isShow">
+        <div>James is MVP！！！</div>
+        <div>James is MVP！！！</div>
+        {{message}}
+      </h3>
+
+      <h3 v-else>isShow为false时候,显示guardwhy!!!</h3>
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+        // 定义数据
+        data: {
+          message: 'hello, Vue.js!!!',
+          isShow: false
+        }
+      })
+  </script>
+</body>
+</html>

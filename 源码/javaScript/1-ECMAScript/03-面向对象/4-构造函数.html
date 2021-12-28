@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>构造函数创建对象</title>
+  <script type="text/javascript">
+	// 构造函数的函数名称首字母必须大写
+	function Person(myName, myAge){
+      // let obj = new Object();  // 系统自动添加的
+      // let this = obj; // 系统自动添加的
+	  this.name = myName;
+	  this.age= myAge;
+	  this.say = function (){
+	    console.log("hello javaScript!!!")
+	  }
+	}
+
+	// 构造函数只能够通过new来调用
+    let obj1 = new Person("james", 10);
+    let obj2 = new Person("kobe", 34);
+	// 输出属性
+	console.log(obj1);
+	console.log(obj2);
+  </script>
+</head>
+<body>
+	<!--
+		构造函数就是一个普通的函数，创建方式和普通函数没有区别,
+		不同的是构造函数习惯上首字母大写，构造函数和普通函数的区别就是调用方式的不同。
+	    普通函数是直接调用，而构造函数需要使用new关键字来调用。
+
+		构造函数的执行流程：
+		  1.立刻创建一个新的对象
+		  2.将新建的对象设置为函数中this,在构造函数中可以使用this来引用新建的对象
+		  3.逐行执行函数中的代码
+		  4.将新建的对象作为返回值返回
+
+	使用同一个构造函数创建的对象，称为一类对象，也将一个构造函数称为一个类。通过一个构造函数创建的对象，称为是该类的实例.
+	-->
+</body>
+</html>

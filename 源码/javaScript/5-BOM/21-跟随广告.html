@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>跟随广告</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	p{
+		text-align: center;
+		line-height: 40px;
+	}
+	img{
+		position: absolute;
+		left: 0;
+	}
+  </style>
+  <script src="js/animation02.js"></script>
+  <script src="js/tools.js"></script>
+</head>
+<body>
+<img src="images/left_ad.png" alt="">
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<p>月落乌啼霜满天，江枫渔火对愁眠。</p>
+<p>姑苏城外寒山寺，夜半钟声到客船。</p>
+<script type="text/javascript">
+  // 1.拿到需要操作的元素
+  let oAdImg = document.querySelector("img");
+  // 2.计算广告图片top值
+  let screenHeight = getScreen().height;
+  let imgHeight = oAdImg.offsetHeight;
+  let offsetY = (screenHeight - imgHeight) / 2;
+  // 3.将计算的top值设置给广告图片
+  easeAnimation(oAdImg, {"top": offsetY});
+  // 4.监听网页的滚动事件
+  window.onscroll = function (){
+    // 获取到网页滚动事件
+	let pageOffsetY = getPageScroll().y;
+	easeAnimation(oAdImg, {"top": offsetY + pageOffsetY});
+  }
+</script>
+</body>
+</html>

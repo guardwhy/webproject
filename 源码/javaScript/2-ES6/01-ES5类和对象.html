@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES5类和对象</title>
+  <script type="text/javascript">
+    /*
+	通过构造函数来定义一个类
+	*/
+	function Person(myName, myAge) {
+		// 实例属性
+		this.name = myName;
+		this.age = myAge;
+
+		// 实例方法
+		this.message = function () {
+			console.log("姓名:"+ this.name + ",年龄:"+ this.age);
+			console.log("实例方法被调用!!!!")
+		}
+		// 静态属性
+		Person.num = 666;
+		// 静态方法
+		Person.run = function () {
+			console.log("静态方法被执行！！！");
+		}
+	}
+	// 实例化创建对象
+	let obj = new Person("guardwhy", 18);
+	// 对象调用实例方法
+	obj.message();
+
+	// 输出静态属性
+	console.log(Person.num);
+	// 构造函数调用静态方法
+	Person.run();
+  </script>
+</head>
+<body>
+
+</body>
+</html>

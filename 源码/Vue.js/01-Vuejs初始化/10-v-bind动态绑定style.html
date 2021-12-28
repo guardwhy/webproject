@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-bind动态绑定style(数组用法)</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <h5 :style="[baseStyle1,baseStyle2]">{{message}}</h5>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+        // 定义数据
+        data: {
+          message: 'hello Vue.js!!!',
+		  baseStyle1:{backgroundColor: 'red'},
+		  baseStyle2:{fontSize:'40px'},
+        }
+      })
+  </script>
+</body>
+</html>

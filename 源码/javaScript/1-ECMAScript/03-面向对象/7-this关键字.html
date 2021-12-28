@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>this关键字</title>
+  <script type="text/javascript">
+	// 1.创建Person构造函数
+    function Person(myName, myAge) {
+      this.name = myName;
+      this.age = myAge;
+      this.say = function () {
+        // 方法中的this谁调用就是谁, 所以当前是obj1调用, 所以当前的this就是obj1
+        console.log(this.name, this.age);
+      }
+      // return this; // 系统自动添加的
+    }
+    // 创建obj1对象
+    let obj1 = new Person("guardwhy", 26);
+    // console.log(obj1.name);
+    // console.log(obj1.age);
+
+	// 对象调用方法
+    obj1.say();
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04-ES6定义变量</title>
+  <script type="text/javascript">
+	// 定义变量
+	let num1;
+	// 给变量初始化
+	num1 = 30;
+	// 取出数据
+	document.write("num的值:" + num1 + "<br/>");
+	// 修改变量
+	num1 = 40;
+    document.write("num的值:" + num1 + "<br/>");
+
+    document.write("==============" + "<br/>");
+
+    let num2 = 123;
+    // let num2 = 345; // 报错
+    document.write("num2的值:" + num2+ "<br/>");
+
+    document.write("==============" + "<br/>");
+  </script>
+</head>
+<body>
+	<!--
+		为了解决老版标准的的两个注意点
+        1.在JavaScript中如果定义了同名的变量, 那么后定义的变量会覆盖先定义的变量
+        2.在老版本的标准的(ES6之前)JavaScript中可以先使用变量, 再定义变量, 并不会报错
+        在ES6中就推出了一种新的定义变量的方式
+        格式:
+        ES6之前: var 变量名称;
+        ES6开始: let 变量名称;
+	-->
+</body>
+</html>

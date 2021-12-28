@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Date对象</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 1.获取当前时间
+  let date1 = new Date();
+  console.log(date1);
+  // 2.获取当前时间距离1970年1月1日（世界标准时间）起的毫秒
+  console.log(Date.now());
+  let date2 = new Date();
+  console.log(date2.valueOf());
+
+  console.log("===指定时间===");
+  // 3.创建指定时间
+  let date3 = new Date("2020-12-12 10:35:09");
+  console.log(date3);
+  // 4.获取指定时间年月入时分秒
+  console.log(date1.getFullYear());
+  // 通过getMonth方法获取到的月份会少一个月
+  console.log(date1.getMonth()+1);
+  console.log(date1.getDate());
+  console.log(date1.getHours());
+  console.log(date1.getMinutes());
+  console.log(date1.getSeconds());
+
+  // 时间格式化
+  let date = new Date();
+  let res = formartDate(date);
+  console.log(res);
+  // 调用函数
+  function formartDate(date){
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+  }
+</script>
+</body>
+</html>

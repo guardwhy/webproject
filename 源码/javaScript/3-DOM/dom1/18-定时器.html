@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>定时器</title>
+</head>
+<body>
+<button id="start">开始执行</button>
+<button id="close">结束操作</button>
+
+<script type="text/javascript">
+  // 1.重复执行的定时器
+ /* let start1 = document.querySelector("#start");
+  let id = null;
+  // 1.1 点击事件
+  start1.onclick = function (){
+    id = setInterval(function (){
+      console.log("hello javaScript!!!");
+	}, 1000);
+  }
+  // 1.2 关闭点击事件
+  let close1 = document.querySelector("#close");
+  // 停止事件
+  close1.onclick = function (){
+    clearInterval(id);
+  }*/
+
+  // 2.执行一次的定时器
+  let start2 = document.querySelector("#start");
+  let id = null;
+  // 1.1 点击事件
+  start2.onclick = function (){
+    id = window.setTimeout(function (){
+      console.log("hello javaScript!!!");
+    }, 1000);
+  }
+  // 1.2 关闭点击事件
+  let close2 = document.querySelector("#close");
+  // 停止事件
+  close2.onclick = function (){
+    clearTimeout(id);
+  }
+</script>
+</body>
+</html>

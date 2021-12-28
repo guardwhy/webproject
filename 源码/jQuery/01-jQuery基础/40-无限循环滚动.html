@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>无限循环滚动</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	div{
+		width: 600px;
+		height: 161px;
+        border: 1px solid #000;
+		margin: 100px auto;
+		overflow: hidden;
+	}
+	ul{
+		list-style: none;
+		width: 1800px;
+		height: 162px;
+		background: #000000;
+	}
+	ul>li{
+		float: left;
+	}
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script type="text/javascript">
+	$(function (){
+	  // 1定义变量保存偏移位
+	  let offset = 0;
+	  // 2.1 让图片滚动起来
+	  let timer;
+	  function autoPlay(){
+	    timer = setInterval(function (){
+	      offset += -10;
+	      if(offset <= -1200){
+	        offset = 0;
+		  }
+	      $("ul").css("marginLeft", offset);
+		}, 50);
+	  }
+	  // 2.2 调用函数
+	  autoPlay();
+
+	  // 3.监听li的移入和移出事件
+	  $("li").hover(function (){
+	    // 3.1 停止滚动
+		clearInterval(timer);
+		// 3.2 给非当前选中添加蒙版
+		$(this).siblings().fadeTo(100, 0.5);
+		// 3.3 去除当前选中的蒙版
+		$(this).fadeTo(100, 1);
+	  }, function (){
+	    // 3.4 继续滚动
+		autoPlay();
+		// 3.5 去除所有的蒙版
+		$("li").fadeTo(100, 1);
+	  });
+	});
+  </script>
+</head>
+<body>
+<div>
+  <ul>
+	<li><img src="images/a.jpg" alt=""></li>
+	<li><img src="images/b.jpg" alt=""></li>
+	<li><img src="images/c.jpg" alt=""></li>
+	<li><img src="images/d.jpg" alt=""></li>
+	<li><img src="images/a.jpg" alt=""></li>
+	<li><img src="images/b.jpg" alt=""></li>
+  </ul>
+</div>
+</body>
+</html>

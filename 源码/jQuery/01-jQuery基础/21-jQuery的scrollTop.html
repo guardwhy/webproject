@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery的scrollTop</title>
+  <style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.scroll{
+		width: 200px;
+		height: 200px;
+        border: 1px solid #000;
+		overflow: auto;
+	}
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<div class="scroll">
+  1.我亦飘零久，十年来，深恩负尽，死生师友。——顾贞观《金缕曲二首》2.桃李春风一杯酒，江湖夜雨十年灯。——黄庭坚《寄黄几复》
+  3.雨中黄叶树，灯下白头人。——司空曙《喜外弟卢纶见宿》4.人间有味是清欢。——苏轼《浣溪沙 从泗州刘倩叔游南山》
+  5.绿蚁新醅酒，红泥小火炉。晚来天欲雪，能饮一杯无？——白居易《问刘十九》6.我有一瓢酒,可以慰风尘。——韦应物《简卢陟》
+  7.少年听雨歌楼上，红烛昏罗帐。壮年听雨客舟中，江阔云低、断雁叫西风。而今听雨僧庐下，鬓已星星也。悲欢离合总无情。一任阶前、点滴到天明。——蒋捷《虞美人 听雨》
+  8.君埋泉下泥销骨，我寄人间雪满头。——白居易《梦微之》9.直道相思了无益，未妨惆怅是清狂。——李商隐《无题六首其三》
+  10.欲买桂花同载酒，终不似，少年游。——刘过《唐多令·芦叶满汀洲》11.人言落日是天涯，望极天涯不见家。已恨碧山相阻隔，碧山还被暮云遮。——李觏《乡思》
+  12.以色事他人，能得几时好。——李白《妾薄命》13.山有木兮木有枝，心悦君兮君不知。——《越人歌》14.从此无心爱良夜，任他明月下西楼。——李益《写情》
+  15.故园便是无兵马，犹有归时一段愁。——陈与义《送人归京师》16.我是人间惆怅客，知君何事泪纵横，断肠声里忆平生。——纳兰性德《浣溪沙 残雪凝辉画冷屏》
+</div>
+<button>获取</button>
+<button>设置</button>
+<script type="text/javascript">
+  $(function (){
+    // 1.拿到button
+	let btns = document.getElementsByTagName("button");
+	// 2.监听获取
+	btns[0].onclick = function (){
+	  // 2.1 获取滚动的偏移位
+	  // console.log($(".scroll").scrollTop());
+	  // 2.2 获取网页滚动的偏移位
+      console.log($("body").scrollTop()+$("html").scrollTop());
+	}
+	// 3.设置网页偏移
+	btns[1].onclick = function (){
+	  // 3.1 设置滚动的偏移位
+	  // $(".scroll").scrollTop(300);
+	  // 3.2 设置网页滚动偏移位
+	  $("html,body").scrollTop(300);
+	}
+  })
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

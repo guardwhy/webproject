@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>属性节点</title>
+  <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<span name="imooc"></span>
+<script type="text/javascript">
+  $(function (){
+    /*
+    1.属性节点：
+    在编写HTML代码时,在HTML标签中添加的属性就是属性节点。
+    在attributes属性中保存的所有内容都是属性节点。
+    2.操作属性节点
+	  DOM元素.setAttribute("属性名称", "值");
+	  DOM元素.getAttribute("属性名称");
+	3.属性和属性节点区别
+	任何对象都有属性, 但是只有DOM对象才有属性节点。
+    */
+	let span = document.getElementsByTagName("span")[0];
+	// 设置属性节点
+	span.setAttribute("name", "guardwhy");
+	// 输出结果
+	console.log(span.getAttribute("name"));
+  });
+</script>
+</body>
+</html>

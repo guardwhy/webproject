@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>遍历数组</title>
+  <script type="text/javascript">
+    // 1.利用传统循环来遍历数组
+	let arr1 = [1, 4, 6, 7, 10];
+	// 遍历数组
+	for (let i=0; i<arr1.length; i++){
+	  console.log(arr1[i]);
+	}
+
+	console.log("+++++++++++++");
+    // 2.利用ES6中推出的for of循环来遍历数组
+	for(let value of arr1){
+	  console.log(value);
+	}
+
+    console.log("==============");
+	// 3.用Array对象的forEach方法来遍历数组
+	arr1.forEach(function (currentValue, currentIndex, currentArray){
+	  console.log(currentValue);
+	});
+
+    console.log("-----------------");
+	// forEach实现
+	Array.prototype.myForEach = function (func){
+	  // this === [1, 4, 6, 7, 10];
+	  for(let i=0; i<this.length; i++){
+	    func(this[i], i, this);
+	  }
+	};
+	arr1.myForEach(function (currentValue, currentIndex, currentArray){
+	  console.log(currentValue, currentIndex, currentArray);
+	});
+  </script>
+</head>
+<body>
+
+</body>
+</html>

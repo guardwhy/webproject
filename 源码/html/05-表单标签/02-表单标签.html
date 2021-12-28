@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02-表单标签</title>
+</head>
+  <body>
+    <form action="http://www.baidu.com">
+      <!--明文输入框-->
+      姓名：<input type="text" name="aa"/><br/>
+      密码：<input type="password" name="bb"/><br/>
+
+      <!--2.创建普通按钮-->
+      <input type="button" value="普通按钮" onclick="alert('Curry')">
+
+      <!--3.图片按钮-->
+      <input type="image" src="images/register.jpg" onclick="alert('curry')">
+
+      <!--4.重置按钮-->
+      <input type="reset" value="清空">
+
+      <!--5.提交按钮-->
+      <input type="submit" value="提交按钮">
+
+      <!--6.隐藏域-->
+      <input type="hidden" name="guardwhy" value="隐藏域">
+    </form>
+  </body>
+</html>

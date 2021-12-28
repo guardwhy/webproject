@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES6函数拓展运算符</title>
+  <script type="text/javascript">
+	/*
+	扩展运算符在等号右边, 将数组中的数据解开
+        let arr1 = [1, 6, 5];
+        let arr2 = [11, 4, 8];
+        let array = [...arr1, ...arr2]; let array = [1, 6, 5, 11, 4, 8];
+	*/
+
+	/*
+		扩展运算符在函数的形参列表中的作用:
+        将传递给函数的所有实参打包到一个数组中
+        注意点: 和在等号左边一样, 也只能写在形参列表的最后。
+	*/
+	function getSum(...values){
+	  // 定义sum值
+	  let sum = 0;
+	  for(let i=0; i<values.length; i++){
+	    let element = values[i];
+	    sum += element;
+	  }
+	  return sum;
+	}
+	// 调用函数
+	let array = getSum(10, 20, 30, 40);
+	console.log("array元素总和:" + array); // array元素总和:100
+  </script>
+</head>
+<body>
+
+</body>
+</html>

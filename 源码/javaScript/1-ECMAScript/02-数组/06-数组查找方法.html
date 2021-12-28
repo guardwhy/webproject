@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>数组查找方法</title>
+  <script type="text/javascript">
+	// 定义数组
+	let arr = [3, 2, 6, 7, 6];
+    // 1.数组的findIndex方法
+    // findIndex方法: 定制版的indexOf, 找到返回索引, 找不到返回-1
+	let index = arr.findIndex(function (currentValue, currentIndex, currentArray){
+	  if(currentValue === 6){
+	    return true;
+	  }
+	});
+	console.log("索引值:" + index);
+
+	console.log("===========");
+
+    // 2.数组的find方法
+    /*
+    find方法返回索引, find方法返回找到的元素。
+    find方法如果找到了就返回找到的元素, 如果找不到就返回undefined。
+    */
+	let value = arr.find(function (currentValue, currentIndex, currentArray){
+	  // 条件判断
+	  if(currentValue === 6){
+	    return true;
+	  }
+	});
+
+	// 输出结果
+	console.log("元素:" + value);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

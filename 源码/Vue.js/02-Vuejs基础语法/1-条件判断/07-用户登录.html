@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>用户登录</title>
+</head>
+<body>
+<!--2.定义一个div元素-->
+    <div id="app">
+      <!--条件判断-->
+      <span v-if="isUser">
+        <label for="username">用户账户</label>
+        <input type="text" id="username" placeholder="用户账户" key="username">
+      </span>
+      <span v-else>
+        <label for="email">用户邮箱</label>
+        <input type="text" id="email" placeholder="用户邮箱" key="email">
+      </span>
+
+      <!--切换按钮-->
+      <button @click="isUser=!isUser">切换类型</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      // 创建对象
+      const app = new Vue({
+        // 挂载要管理的元素
+        el: '#app',
+
+        // 定义数据
+        data: {
+          isUser: true
+        }
+      })
+  </script>
+</body>
+</html>

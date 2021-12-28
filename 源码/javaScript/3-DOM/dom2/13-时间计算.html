@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>时间计算</title>
+</head>
+<body>
+<script type="text/javascript">
+  // 定义时间差
+  let curDate = new Date("2020-4-19 22:30:20");
+  let remDate = new Date("2020-4-30 00:00:00");
+  // 1.得到两个时间的差值
+  let differTime = remDate - curDate;
+  console.log("differTime:" + differTime);
+  // 2.得到两个时间之间的差值(秒)
+  let differSecond = differTime / 100;
+  console.log("时间之间的差值:" + differSecond);
+  // 3.相差天数
+  let day = Math.floor(differSecond / (60 * 60 * 24));
+  console.log("天数:" + day);
+  // 4.利用相差的总秒数 / 小时 % 24;
+  let hour = Math.floor(differSecond / (60 * 60) % 24);
+  console.log("hour:" + hour);
+  // 5.利用相差的总秒数 / 分钟 % 60;
+  let minute = Math.floor(differSecond / 60 % 60);
+  console.log("分钟:" + minute);
+  // 6.利用相差的总秒数 % 秒数
+  let second = differSecond % 60;
+  console.log(second);
+</script>
+</body>
+</html>
